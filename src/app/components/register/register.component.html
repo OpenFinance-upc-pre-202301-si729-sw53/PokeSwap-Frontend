@@ -1,8 +1,7 @@
-<p>register works!</p>
-
 <div class="form-register">
     <form (submit)="onSubmit()" #userForm="ngForm">
         <div class="tp-container">
+          <div>Welcome to POKESWAP</div><br>
           <mat-form-field appearance="fill">
             <mat-label>Name</mat-label>
             <input
@@ -14,7 +13,7 @@
               [(ngModel)]="userData.name"
             />
           </mat-form-field>
-          
+
           <mat-form-field appearance="fill">
             <mat-label>Password</mat-label>
             <input
@@ -38,17 +37,14 @@
               [(ngModel)]="userData.email"
             />
           </mat-form-field>
-
-
-        </div>
-
-        <button
+          <button
           type="submit"
           mat-button
           color="primary"
           [disabled]="!userForm.form.valid"
         >
-          LOGIN
+          REGISTER
         </button>
+        </div>
       </form>
 </div>

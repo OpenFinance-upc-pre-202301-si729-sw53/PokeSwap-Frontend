@@ -1,0 +1,39 @@
+.token-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .token {
+    width: 80%;
+    background-color: #1b1b1b;
+    margin-bottom: 40px;
+    border-radius: 20px;
+    box-shadow: 0px 0px 2px 0.5px rgba(255, 185, 0, 0.7);
+  }
+  
+  .token-info {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px;
+  }
+  
+  .token-name {
+    font-size: 18px;
+    font-weight: bold;
+    margin-left: 20px;
+  }
+  
+  .token-amount {
+    display: flex;
+    align-items: center;
+    font-size: 16px;
+    margin-left: auto;
+  }
+  
+  .token-amount span:first-child {
+    margin-right: 5px;
+  }
+  
