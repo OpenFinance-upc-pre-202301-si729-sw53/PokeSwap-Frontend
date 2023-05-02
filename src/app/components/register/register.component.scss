@@ -1,0 +1,9 @@
+.tp-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.tp-container>* {
+    width: 100%;
+}

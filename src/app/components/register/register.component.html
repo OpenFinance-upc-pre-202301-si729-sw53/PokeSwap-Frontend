@@ -1,1 +1,54 @@
 <p>register works!</p>
+
+<div class="form-register">
+    <form (submit)="onSubmit()" #userForm="ngForm">
+        <div class="tp-container">
+          <mat-form-field appearance="fill">
+            <mat-label>Name</mat-label>
+            <input
+              matInput
+              placeholder="Nombre"
+              id="name"
+              name="name"
+              required
+              [(ngModel)]="userData.name"
+            />
+          </mat-form-field>
+          
+          <mat-form-field appearance="fill">
+            <mat-label>Password</mat-label>
+            <input
+              matInput
+              placeholder="Password"
+              id="password"
+              name="password"
+              required
+              [(ngModel)]="userData.password"
+            />
+          </mat-form-field>
+
+          <mat-form-field appearance="fill">
+            <mat-label>Email</mat-label>
+            <input
+              matInput
+              placeholder="Email"
+              id="email"
+              name="email"
+              required
+              [(ngModel)]="userData.email"
+            />
+          </mat-form-field>
+
+
+        </div>
+
+        <button
+          type="submit"
+          mat-button
+          color="primary"
+          [disabled]="!userForm.form.valid"
+        >
+          LOGIN
+        </button>
+      </form>
+</div>
