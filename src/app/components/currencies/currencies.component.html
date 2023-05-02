@@ -1,1 +1,51 @@
-<p>currencies works!</p>
+<app-toolbar></app-toolbar>
+<div class="container">
+    <div class="card">
+        <div class="header">
+            {{exchanges[0].name}}
+        </div>
+        <div class="img">
+            <img src="../../../assets/img/Coinbase-logo.png" alt="Coinbase-logo" class="logo-class">
+        </div>
+        <div class="comision">
+            <span>Comisión: +{{exchanges[0].comision}}%</span>
+            <p> Minimun Desposit: {{exchanges[0].minimunDesposit}} $</p>
+        </div>
+        <div class="date">  
+            <span>Time: {{exchanges[0].time}}</span>
+        </div>
+    </div>
+    
+    <div class="card">
+        <div class="header">
+            {{exchanges[1].name}}
+        </div>
+        <div class="img">
+            <img src="../../../assets/img/Binance-logo.png" alt="Binance-logo" class="logo-class">
+        </div>
+        <div class="comision">
+            <span>Comisión: +{{exchanges[1].comision}}%</span>
+            <p> Minimun Desposit: {{exchanges[1].minimunDesposit}}%</p>
+        </div>
+        <div class="date">  
+            <span>Time: {{exchanges[1].time}}</span>
+        </div>
+    </div>
+
+    <div class="card">
+        <div class="header">
+            {{exchanges[2].name}}
+        </div>
+        <div class="img">
+            <img src="../../../assets/img/Huobi.png" alt="Bitfenix-logo" class="logo-class">
+        </div>
+        <div class="comision">
+            <span>Comisión: +{{exchanges[2].comision}}%</span>
+            <p> Minimun Desposit: {{exchanges[2].minimunDesposit}} $</p>
+        </div>
+        <div class="date">  
+            <span>Time: {{exchanges[2].time}}</span>
+        </div>
+    </div>
+
+</div>
