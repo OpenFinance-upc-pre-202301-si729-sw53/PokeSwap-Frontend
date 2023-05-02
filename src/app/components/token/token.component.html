@@ -1,1 +1,9 @@
-<p>token works!</p>
+<div class="token-container" style="color: whitesmoke;">
+    <div class="token" *ngFor="let token of tokens">
+      <div class="token-info">
+        <img src="https://www.freepnglogos.com/uploads/bitcoin-png/will-bitcoin-collapse-soon-moneyhighstreetm-6.png" alt="{{ token.name }} logo" width="50px" height="50px">
+        <div class="token-name">{{ token.name }}</div>
+        <div class="token-amount">{{ token.quantity }} {{ token.name }}</div>
+      </div>
+    </div>
+</div>  
