@@ -13,14 +13,17 @@ export class RegisterComponent {
 
   @ViewChild('userForm', { static: false })
   userForm!: NgForm;
+  router: any;
 
   constructor(private service: UserService) {
     this.userData = {} as User;
   }
 
   onSubmit() {
-    console.log(11)
-    console.log(this.userData)
+    console.log(this.userData);
+    this.service.addUser(this.userData);
     this.userForm.resetForm();
+    const redirectUrl = '/login';
+    this.router.navigate([redirectUrl]);
   }
 }

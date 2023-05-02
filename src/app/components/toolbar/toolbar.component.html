@@ -1,6 +1,6 @@
 <mat-toolbar color="primary">
   <img src="../../../assets/img/logo-poke.png" alt="" />
-  <span>PokeSwap</span>
+  <a mat-button href="/dashboard/currencies">PokeSwap</a>
   <span class="example-spacer"></span>
 
   <button
@@ -47,12 +47,12 @@
   <button
     mat-fab
     extended
-    color="primary"
-    aria-label="Button for 'home' with home icon"
-    routerLink="dashboard"
+    color="warn"
+    aria-label="Button for 'exit' with exit icon"
+    routerLink="login"
   >
-    <mat-icon>home</mat-icon>
-    Home
+    <mat-icon>logout</mat-icon>
+    LogOut
   </button>
   
 </mat-toolbar>

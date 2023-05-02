@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { UserService } from './user.service';
-import { Observable, delay, of, tap } from 'rxjs';
+import { Observable, delay, of, tap, map } from 'rxjs';
+import { User } from '../models/user.model';
 
 @Injectable({
   providedIn: 'root'
@@ -10,19 +11,26 @@ export class AuthService {
   id: number | undefined = undefined;
   redirectUrl: string | null = null;
 
-  constructor(private service: UserService) {  }
+  constructor(private service: UserService) { }
 
-  login(): Observable<boolean> {
-    return of(true).pipe(
-      delay(10),  
-      tap(() => {
-        
-        this.isLoggedIn = true
-      })
-    );
+  async login(name: string, pass: string): Promise<boolean> {
+    try {
+      const response = await this.service.getUsers().toPromise();
+      const matchingUser = response!.find(user => user.name === name && user.password === pass);
+      if (matchingUser) {
+        this.isLoggedIn = true;
+        console.log('Logged in successfully');
+        return true;
+      }
+      console.log('Invalid credentials');
+      return false;
+    } catch (error) {
+      console.log('Error while logging in', error);
+      return false;
+    }
   }
 
-  logout():void {
-    this.isLoggedIn=false;
+  logout(): void {
+    this.isLoggedIn = false;
   }
 }

@@ -2,7 +2,7 @@ import { Component, ViewChild } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { Router } from '@angular/router';
 import { User } from 'src/app/models/user.model';
-import { UserService } from 'src/app/services/user.service';
+import { AuthService } from 'src/app/services/auth.service';
 
 @Component({
   selector: 'app-login',
@@ -11,20 +11,24 @@ import { UserService } from 'src/app/services/user.service';
 })
 export class LoginComponent {
 
-  userData:User;
+  userData: User;
 
-  @ViewChild('userForm', {static:false})
-  userForm!:NgForm;
+  @ViewChild('userForm', { static: false })
+  userForm!: NgForm;
 
-  constructor(private service: UserService, public router:Router) {
+  constructor(private service: AuthService, public router: Router) {
     this.userData = {} as User;
   }
 
-  onSubmit(){
-    console.log(11)
+  async onSubmit() {
     console.log(this.userData)
-    const redirectUrl = '/dashboard';
-    this.router.navigate([redirectUrl]);
+    if (await this.service.login(this.userData.name, this.userData.password)) {
+      console.log('valid data')
+      const redirectUrl = '/dashboard/currencies';
+      this.router.navigate([redirectUrl]);
+    }
+    else console.log('invalid data')
     this.userForm.resetForm();
+
   }
 }
