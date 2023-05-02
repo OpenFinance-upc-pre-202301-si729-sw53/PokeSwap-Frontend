@@ -1,0 +1,28 @@
+{
+    "users": [
+        {
+          "user_id": 1,
+          "name": "John",
+          "password": "abc123",
+          "password_hash": "9d7e3c3e212b7a5c5e994e5d7c2f80b1",
+          "created_at": "2022-05-02T10:30:00.000Z"
+        },
+        {
+          "user_id": 2,
+          "name": "Jane",
+          "password": "def456",
+          "password_hash": "7c4a8d09ca3762af61e59520943dc26494f8941b",
+          "created_at": "2022-05-01T14:45:00.000Z"
+        },
+        {
+          "user_id": 3,
+          "name": "Bob",
+          "password": "xyz789",
+          "password_hash": "d8578edf8458ce06fbc5bb76a58c5ca4",
+          "created_at": "2022-04-30T20:15:00.000Z"
+        }
+      ],
+    "tokens": [
+        
+    ]      
+}

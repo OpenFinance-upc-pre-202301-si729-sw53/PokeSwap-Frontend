@@ -1,0 +1,586 @@
+//#c397fd; 1
+//#FF4DD8; 2
+//#9747FF; 3
+
+*{
+    padding: 0;
+    //font-family: 'Montserrat', sans-serif;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+}
+
+::-webkit-scrollbar {
+    display: none;
+}
+
+/* Header Section */
+
+header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    height: 60px;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 100;
+    background-color: white;
+    box-shadow: 0 0 10px rgba(0,0,0,0.5);
+}
+
+header .logo {
+    width: 300px;
+    background-color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 15px;
+    color: #000;
+}
+
+header .logo img {
+    height: 60px;
+    width: 60px;
+}
+
+header .logo h1 {
+    margin: auto;
+    color: #FF4DD8;
+}
+
+.navbar {
+    justify-content: center;
+}
+
+.menu {
+    text-decoration: none;
+    display: flex;
+    margin: 0;
+    height: 100%;
+}
+
+.menu-item {
+    text-decoration: none;
+    justify-content: center;
+    font-size: 16px;
+    list-style: none;
+    color: #fff;
+    font-weight: 500;
+    margin: auto 10px;
+    padding: 10px 10px;
+    border-radius:  5px;
+}
+
+header .menu .menu-item a {
+    text-decoration: none;
+    color: #000;
+}
+
+header .menu .menu-item:hover {
+    color: #fff;
+    background-color: #9747FF;
+}
+
+header .menu .menu-item a:hover {
+    color: #fff;
+}
+
+.btn-open-account {
+    color: #000;
+    justify-content: center;
+    font-weight: bold;
+    padding: 10px 20px;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+}
+
+.btn-open-account button {
+    background-color: #9747FF;
+    height: 100%;
+    width: 100%;
+    margin: auto;
+    padding: 5px;
+    border: 0;
+    border-radius: 5px;
+}
+
+.btn-open-account button:hover {
+    background-color: #c397fd;
+    color: #fff;
+    text-decoration: none;
+}
+
+
+/* ------------- Main Section ------------------ */
+
+/* Hero Section */
+
+.hero {
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    height: 600px;
+    width: 100%;
+}
+
+#blank-space {
+    height: 115px;
+}
+
+.back-hero-text {
+    display: flex;
+    flex-direction: row;
+    width: 60%;
+    justify-content: space-between;
+}
+
+.line {
+    height: 1px;
+    width: 200px;
+    margin: auto 10px;
+    background-color: #9747FF;
+}
+
+.back-hero-text h3 {
+    font-size: small;
+    color: #9747FF;
+}
+
+.hero .hero-text {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+    text-align: center;
+}
+
+.hero-text h1 {
+    font-size: 2.5rem;
+    color: transparent;
+    font-weight: 900;
+    background: linear-gradient(90deg, #9747FF 0%, #FF4DD8 100%);
+    -webkit-background-clip: text;
+    position: relative;
+}
+
+.hero-text h4 {
+    font-size: 1rem;
+    font-weight: regular;
+}
+
+.hero-text button {
+    background-color: #000;
+    color: #fff;
+    font-weight: normal;
+    padding: 10px 20px;
+    border-radius: 5px;
+    border: 0;
+    cursor: pointer;
+    margin: 10px 0;
+}
+
+/* Cryto Section */
+
+.cryptos {
+    align-items: center;
+    height: 400px;
+    width: 100%;
+    background-color: #fff;
+}
+
+
+
+.carousel {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+}
+
+.carousel-item {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 70%;
+    width: 100%;
+    background-color: #000;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.5);
+    margin: auto 10px;
+    color: #fff;
+}
+
+.carousel-item .crypt-title {
+    width: 90%;
+    display: flex;
+    align-items: center;
+    margin: 5px auto ;
+    position: relative;
+    bottom: 20px;
+}
+
+.carousel-item img {
+    height: 50px;
+    width: 50px;
+}
+
+.carousel-item h3 {
+    font-size: 1rem;
+    font-weight: medium;
+}
+
+/*Price crytocurrency  */
+.carousel-item h4 {
+    width: 80%;
+    margin: 0;
+    font-weight: normal;
+    justify-content: left;
+}
+
+.carousel-item h5 {
+    width: 80%;
+    margin: 2px auto;
+    font-weight: lighter;
+    justify-content: left;
+}
+
+/* About Section */
+
+.about-section {
+    height: 540px;
+    width: 100%;
+}
+
+.about-block {
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+.text-about-container {
+    display: flex;
+    position: relative;
+    flex-direction: column;
+    justify-content: left;
+    align-items: center;
+    padding: 50px;
+    width: 50%;
+    margin: 0;
+}
+
+.text-about-container h1 {
+    font-size: 2.5rem;
+    color: transparent;
+    font-weight: 800;
+    background: linear-gradient(90deg, #9747FF 0%, #FF4DD8 100%);
+    -webkit-background-clip: text;
+    position: relative;
+}
+
+.text-about-container p {
+    font-size: 1rem;
+    font-weight: regular;
+}
+
+.about-section .about-img {
+    display: flex;
+    align-items: center;
+    width: 50%;
+}
+
+.about-section .about-img img {
+    box-shadow: 0 0 10px rgba(0,0,0,0.5);
+    left: 100px;
+    height: 200px;
+    width: 400px;
+    transform: perspective(4cm) rotateY(352deg) rotateX(2deg);
+}
+
+.data-view {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    width: 100%;
+    height: 100px;
+    margin: 0;
+}
+
+.data-view-item h1 {
+    margin: auto;
+}
+
+.data-view-item h4 {
+    margin: 0;
+}
+
+/* Feature Section */
+
+.feature-section {
+    height: 500px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.feature-img {
+    display: flex;
+    -ms-flex-align: center;
+    width: 50%;
+    height:  100%;
+}
+
+.feature-img img {
+    margin: auto;
+    box-shadow: 0 0 10px rgba(0,0,0,0.5);
+    height: 70%;
+    /* transform: perspective(4cm) rotateY(10deg) rotateX(2deg); */
+}
+
+.feature-text {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    width: 60%;
+    height: 100%;
+}
+
+.feature-text h1 {
+    font-size: 2.5rem;
+    color: transparent;
+    font-weight: 800;
+    background: linear-gradient(90deg, #9747FF 0%, #FF4DD8 100%);
+    -webkit-background-clip: text;
+    position: relative;
+}
+
+.feature-list-item {
+    display: flex;
+    flex-direction: column;
+    align-items: left;
+    width: 100%;
+    margin: 30px 0;
+}
+
+.feature-text button {
+    background-color: #9747FF;
+}
+
+/* help section */
+
+.help-section {
+    width: 100%;
+    display: flex;
+    padding-top: 50px;
+    flex-direction: row;
+}
+
+.help-section .help-text {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: auto 50px;
+    width: 50%;
+}
+
+.help-section .help-text h1 {
+    font-size: 2.5rem;
+    color: transparent;
+    font-weight: 800;
+    background: linear-gradient(90deg, #9747FF 0%, #FF4DD8 100%);
+    -webkit-background-clip: text;
+    position: relative;
+    padding: 10px;
+}
+
+.help-section .help-text p {
+    font-size: 1rem;
+    font-weight: regular;
+    width: 80%;
+}
+
+.help-boxes {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+}
+
+.help-box {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 70%;
+    padding: 10px;
+}
+
+.help-box h3 {
+    font-size: 2.5rem;
+    color: transparent;
+    font-weight: 800;
+    background: linear-gradient(90deg, #9747FF 0%, #FF4DD8 100%);
+    -webkit-background-clip: text;
+}
+
+
+.help-section .help-img {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 50%;
+}
+
+.help-section .help-img img {
+    box-shadow: 0 0 10px rgba(0,0,0,0.5);
+    width: 40vw;
+    transform: rotate(-10deg);
+}
+
+.btn-open-account button {
+    display: flex;
+    margin: auto;
+    justify-content: center;
+    align-items: center;
+    width: 140px;
+}
+
+/* Community */
+
+.community-section {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+.community-section h1 {
+    font-size: 2.5rem;
+    color: transparent;
+    font-weight: 800;
+    background: linear-gradient(90deg, #9747FF 0%, #FF4DD8 100%);
+    -webkit-background-clip: text;
+    position: relative;
+    padding: 10px;
+    padding-left: 40px;
+    margin: auto;
+}
+
+.community-section p {
+    font-size: 1rem;
+    font-weight: regular;
+    width: 80%;
+    margin: auto;
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+
+.community-cards {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+}
+
+.community-card {
+    display: flex;
+    margin: auto 30px;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 300px;
+    height: 350px;
+    padding: 10px;
+    background-color: #000;
+    border-radius: 1rem;
+    color: white;
+}
+
+.profile-community {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.blank-space {
+    height: 50px;
+}
+
+.disclaimer-section
+{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 30px 0;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(151, 71, 255, 0.459);
+    color: rgb(0, 0, 0);
+}
+
+.disclaimer-section h1 {
+    font-size: small;
+}
+
+.disclaimer-section p {
+    text-align: justify;  
+    margin: auto 50px; 
+    font-size: small;
+}
+
+/* Footer */
+
+footer {
+    display: flex;
+    flex-direction: row;
+    justify-content:center;
+    width: 100%;
+    background-color: white;
+    box-shadow: 0 0 10px rgba(0,0,0,0.5);
+}
+
+.footer-text {
+    width: 30%;
+    margin: auto;
+}
+
+.footer-text p {
+    font-size: large;
+    font-weight: bold;
+    padding-left: 100px;
+}
+
+.footer-social {
+    width: 70%;
+}
+
+.footer-social-list {
+    display: flex;
+    flex-direction: row;
+}
+
+.footer-social ul li {
+    list-style: none;
+    text-decoration: none;
+    margin: auto;
+}

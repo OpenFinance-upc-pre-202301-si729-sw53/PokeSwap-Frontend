@@ -1,0 +1,44 @@
+<div class="login">
+  <img src="../../../assets/img/logo-poke.png" alt="" />
+  <h1>PokeSwap</h1>
+
+  <h2>Welcome Back!</h2>
+  <form (submit)="onSubmit()" #userForm="ngForm">
+    <div class="tp-container">
+      <mat-form-field appearance="fill">
+        <mat-label>Name</mat-label>
+        <input
+          matInput
+          placeholder="Nombre"
+          id="name"
+          name="name"
+          required
+          [(ngModel)]="userData.name"
+        />
+      </mat-form-field>
+      <mat-form-field appearance="fill">
+        <mat-label>Password</mat-label>
+        <input
+          matInput
+          placeholder="Password"
+          id="password"
+          name="password"
+          required
+          [(ngModel)]="userData.password"
+        />
+      </mat-form-field>
+    </div>
+    <button
+      type="submit"
+      mat-button
+      color="primary"
+      [disabled]="!userForm.form.valid"
+    >
+      LOGIN
+    </button>
+  </form>
+
+  <button type="button" mat-button color="primary" href="/register">
+    REGISTER
+  </button>
+</div>
