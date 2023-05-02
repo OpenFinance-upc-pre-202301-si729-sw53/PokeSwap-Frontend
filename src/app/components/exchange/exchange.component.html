@@ -1,1 +1,55 @@
-<p>exchange works!</p>
+<div class="allSwap">
+    <mat-card class="swapper">
+        <mat-card-title class="title-text">Swap Coins <mat-icon>compare_arrows</mat-icon> </mat-card-title>
+    <mat-card>
+        <mat-card-subtitle>From</mat-card-subtitle>
+        <div class="converters-flex">
+            <mat-form-field>
+                <mat-label>Quantity (Amount)</mat-label>
+                <input matInput required autocomplete="off" type="number">
+            </mat-form-field>
+            <div class="percentage">
+                <img class="coin-image" src="https://i.imgur.com/kLVXBbm.png" width="20px" height="20px" alt="Coin">
+                <mat-form-field>
+                    <mat-label>Coin</mat-label>
+                    <mat-select required>
+                      <mat-option></mat-option>
+                    </mat-select>
+                </mat-form-field>
+            </div>
+            <div>
+                <mat-card-subtitle class="converters-flex"> Value: $ 120.20</mat-card-subtitle>
+            </div>
+        </div>
+    </mat-card>
+    <br>
+    <mat-card>
+        <mat-card-subtitle>To</mat-card-subtitle>
+        <div class="converters-flex">
+            <mat-form-field>
+                <mat-label>21,388.71</mat-label>
+                <input matInput autocomplete="off" type="number" disabled>
+            </mat-form-field>
+            <div class="percentage">
+                <img class="coin-image" src="https://i.imgur.com/kLVXBbm.png" width="20px" height="20px" alt="Coin">
+                <mat-form-field>
+                    <mat-label>Coin</mat-label>
+                    <mat-select required>
+                        <mat-option>  </mat-option>
+                      </mat-select>
+                </mat-form-field>
+            </div>
+            <div>
+                <mat-card-subtitle class="converters-flex"></mat-card-subtitle>
+            </div>
+        </div>
+    </mat-card>
+    <div class="slippage-flex">
+        <mat-card-subtitle class="slippage-text">Slippage Tolerance</mat-card-subtitle> 
+        <mat-card-subtitle class="slippage-text percentage">1%</mat-card-subtitle>
+    </div>
+    <mat-card-actions>
+        <button class="swap-button" mat-raised-button color="primary">SWAP</button>
+    </mat-card-actions>
+    </mat-card>
+</div>
