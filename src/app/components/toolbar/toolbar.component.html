@@ -1,16 +1,57 @@
-<p>toolbar works!</p>
 <mat-toolbar color="primary">
-    <button mat-icon-button class="example-icon" aria-label="Example icon-button with menu icon">
-      <mat-icon>menu</mat-icon>
-    </button>
-    <span>My App</span>
-    <span class="example-spacer"></span>
-    <button mat-fab extended color="primary" aria-label="Button for 'home' with home icon" routerLink="">
-        <mat-icon>home</mat-icon>
-        Home
-      </button>
-      <button mat-fab extended color="primary" aria-label="Button for 'home' with home icon" routerLink="business/offers">
-        <mat-icon>list</mat-icon>
-        Offers
-      </button>
-  </mat-toolbar>
+  <img src="../../../assets/img/logo-poke.png" alt="" />
+  <span>PokeSwap</span>
+  <span class="example-spacer"></span>
+
+  <button
+    mat-fab
+    extended
+    color="primary"
+    aria-label="Button for 'currencies'"
+    routerLink="currencies"
+  >
+    Currencies
+  </button>
+
+  <button
+    mat-fab
+    extended
+    color="primary"
+    aria-label="Button for 'token'"
+    routerLink="token"
+  >
+    Token
+  </button>
+
+  <button
+    mat-fab
+    extended
+    color="primary"
+    aria-label="Button for 'exchange'"
+    routerLink="exchange"
+  >
+    Exchange
+  </button>
+
+  <button
+    mat-fab
+    extended
+    color="primary"
+    aria-label="Button for 'portfolio'"
+    routerLink="portfolio"
+  >
+    Portfolio
+  </button>
+
+  <button
+    mat-fab
+    extended
+    color="primary"
+    aria-label="Button for 'home' with home icon"
+    routerLink="dashboard"
+  >
+    <mat-icon>home</mat-icon>
+    Home
+  </button>
+  
+</mat-toolbar>

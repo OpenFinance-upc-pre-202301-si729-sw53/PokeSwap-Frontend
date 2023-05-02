@@ -9,7 +9,7 @@ export class AppComponent {
   
   constructor(private router: Router) {}
   
-  isUsersRoute() {
-    return this.router.url === '/users';
+  isDashboardRoute() {
+    return this.router.url.includes('/dashboard');
   }
 }
