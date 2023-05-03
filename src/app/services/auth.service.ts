@@ -16,6 +16,7 @@ export class AuthService {
   async login(name: string, pass: string): Promise<boolean> {
     try {
       const response = await this.service.getUsers().toPromise();
+      console.log(response)
       const matchingUser = response!.find(user => user.name === name && user.password === pass);
       if (matchingUser) {
         this.isLoggedIn = true;

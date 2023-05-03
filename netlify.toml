@@ -1,14 +1,9 @@
 [build]
-  command = "ng build && npm run json-server"
+  command = "ng build"
   publish = "dist/poke-swap-frontend"
 
 [dev]
   command = "ng serve --open"
-
-[[redirects]]
-  from = "/api/*"
-  to = "http://localhost:3000/:splat"
-  status = 200
 
 # The following redirect is intended for use with most SPAs
 # that handle routing internally.

@@ -3,6 +3,7 @@ import { User } from '../models/user.model';
 import { Observable, catchError, throwError } from 'rxjs';
 import { HttpClient, HttpErrorResponse, HttpHeaders } from '@angular/common/http';
 import { environment } from 'src/environments/environment';
+import * as bcrypt from 'bcrypt';
 
 @Injectable({
   providedIn: 'root'
@@ -33,6 +34,11 @@ export class UserService {
   }
 
   constructor(private http: HttpClient) { }
+
+  generatePasswordHash(password: string): string {
+    //add hash logic
+    return password;
+  }
 
   /** GET Users from the server */
   getUsers(): Observable<User[]> {

@@ -1,7 +1,7 @@
 //json-server --watch src/db.json
 
 export interface User {
-    user_id:number,
+    id:number,
     name:string,
     password:string,
     email:string,
