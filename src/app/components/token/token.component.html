@@ -1,9 +1,27 @@
+<div class="container-ins">
+  <h1 *ngIf="data; else elseBlock">
+    You're almost ready ,{{data.name}}.<br>
+    <p *ngIf="exchange; else elseBlock2">
+      You selected {{exchange.name}} for exchange method<br>
+      Great choice!
+    </p>
+    <ng-template #elseBlock2><p>Please select a exchange method!</p></ng-template>
+  </h1>
+  <ng-template #elseBlock>
+    <h1>Please login again.</h1>
+  </ng-template>
+  
+  <h2>Now select the token that you wanna trade</h2>
+  <p> Hint: Doge may be the best option! :3</p>
+</div>
+
 <div class="token-container" style="color: whitesmoke;">
     <div class="token" *ngFor="let token of tokens">
       <div class="token-info">
         <img src="https://www.freepnglogos.com/uploads/bitcoin-png/will-bitcoin-collapse-soon-moneyhighstreetm-6.png" alt="{{ token.name }} logo" width="50px" height="50px">
         <div class="token-name">{{ token.name }}</div>
         <div class="token-amount">{{ token.quantity }} {{ token.name }}</div>
+        <button mat-button (click)="useToken(token)">Use {{token.name}}</button>
       </div>
     </div>
 </div>  

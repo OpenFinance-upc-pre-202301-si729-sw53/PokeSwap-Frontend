@@ -1,0 +1,11 @@
+<h1 mat-dialog-title>Operation ID: {{data.name}}</h1>
+<div mat-dialog-content>
+    <p>The operation has been completed successfully!</p>
+    <p>Total Ammount Gained: {{data.value}}</p>
+    <br>
+    <p>Do you wish to save the operation id?</p>
+</div>
+<div mat-dialog-actions>
+  <button mat-button (click)="onNoClick()">No Thanks</button>
+  <button mat-button [mat-dialog-close]="data.name" cdkFocusInitial>Ok</button>
+</div>

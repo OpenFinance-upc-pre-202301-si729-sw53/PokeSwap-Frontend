@@ -1,4 +1,12 @@
+<div class="container-ins">
+    <h1 *ngIf="data; else elseBlock"> Hi {{data.name}}!</h1>
+    <ng-template #elseBlock><h1>Please login again.</h1></ng-template>
+    <h2>Looking for how to trade?</h2>
+    <p> Go to 'Portfolio' to see how to start trading!</p>
+</div>
+
 <div class="container">
+    
     <div class="card">
         <div class="header">
             {{exchanges[0].name}}
@@ -13,6 +21,7 @@
         <div class="date">  
             <span>Time: {{exchanges[0].time}}</span>
         </div>
+        <button mat-button (click)="useExchange(exchanges[0])">Use {{exchanges[0].name}}</button>
     </div>
     
     <div class="card">
@@ -29,6 +38,7 @@
         <div class="date">  
             <span>Time: {{exchanges[1].time}}</span>
         </div>
+        <button mat-button (click)="useExchange(exchanges[1])">Use {{exchanges[1].name}}</button>
     </div>
 
     <div class="card">
@@ -45,6 +55,7 @@
         <div class="date">  
             <span>Time: {{exchanges[2].time}}</span>
         </div>
+        <button mat-button (click)="useExchange(exchanges[2])">Use {{exchanges[2].name}}</button>
     </div>
 
 </div>

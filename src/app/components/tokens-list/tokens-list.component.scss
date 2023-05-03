@@ -1,0 +1,44 @@
+.instr {
+    width: 80%;
+    margin: auto;
+    padding-top: 2rem;
+}
+
+.header {
+    font-size: 2rem;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.note {
+    font-size: 1.2rem;
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+.steps {
+    list-style: none;
+    font-size: 1.2rem;
+    margin-left: 0;
+    padding-left: 0;
+}
+
+.steps li {
+    margin-bottom: 2rem;
+}
+
+.steps li span {
+    font-weight: bold;
+    margin-bottom: 1rem;
+    display: block;
+}
+
+.steps li p {
+    margin: 0;
+}
+
+
+
+
+

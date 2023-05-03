@@ -10,7 +10,7 @@ import { LoginComponent } from './components/login/login.component';
 import { UsersComponent } from './components/users/users.component';
 import { CurrenciesComponent } from './components/currencies/currencies.component';
 import { TokenComponent } from './components/token/token.component';
-import { ExchangeComponent } from './components/exchange/exchange.component';
+import { ExchangeComponent, ExchangeDialog } from './components/exchange/exchange.component';
 import { TokensListComponent } from './components/tokens-list/tokens-list.component';
 import { MaterialModule } from './shared/material.module';
 import { FormsModule } from '@angular/forms';
@@ -28,6 +28,7 @@ import { DashboardComponent } from './components/dashboard/dashboard.component';
     CurrenciesComponent,
     TokenComponent,
     ExchangeComponent,
+    ExchangeDialog,
     TokensListComponent,
     RegisterComponent,
     DashboardComponent,

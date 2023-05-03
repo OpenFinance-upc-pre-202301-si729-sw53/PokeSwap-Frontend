@@ -24,7 +24,7 @@ export class LoginComponent {
     console.log(this.userData)
     if (await this.service.login(this.userData.name, this.userData.password)) {
       console.log('valid data')
-      const redirectUrl = '/dashboard/currencies';
+      const redirectUrl = '/dashboard/portfolio';
       this.router.navigate([redirectUrl]);
     }
     else console.log('invalid data')
