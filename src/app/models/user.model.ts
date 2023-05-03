@@ -1,4 +1,4 @@
-//json-server --watch src/assets/db.json
+//json-server --watch src/db.json
 
 export interface User {
     user_id:number,
