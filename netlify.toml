@@ -1,5 +1,5 @@
 [build]
-  command = "ng build --prod && npm run json-server"
+  command = "ng build && npm run json-server"
   publish = "dist/poke-swap-frontend"
 
 [dev]
