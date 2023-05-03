@@ -21,6 +21,14 @@
           "password_hash": "d8578edf8458ce06fbc5bb76a58c5ca4",
           "created_at": "2022-04-30T20:15:00.000Z"
         }
+        ,
+        {
+          "user_id": 4,
+          "name": "admin",
+          "password": "admin",
+          "password_hash": "7c4a8d09ca3762af61ebb76a58c5ca4",
+          "created_at": "2022-04-30T20:30:00.000Z"
+        }
       ],
     "tokens": [
         
