@@ -1,6 +1,5 @@
-
-  <!-- Navbar section -->
-  <header>
+<!-- Navbar section -->
+<header>
     <div class="logo">
       <img src="../../../assets/img/logo-poke.png" alt="logo">
       <h1>PokeSwap</h1>
@@ -14,12 +13,35 @@
         <li class="menu-item"><a href="#footer">CONTACT</a></li>
       </ul>
     </div>
-    <div class="btn-open-account"><button><a href="/login">Open Free Account</a></button></div>
-  </header>
+    <div class="btn-open-account">
+      <button><a href="/login">Open Free Account</a></button>
+    </div>
+
+    <button *ngIf="!visible; else bloqueElse" mat-icon-button class="bt_menu" aria-label="Example icon-button with menu icon" (click)="showMenu(true)">
+      <mat-icon>menu</mat-icon>
+    </button>
+    <ng-template #bloqueElse>
+      <button mat-icon-button class="bt_close" aria-label="Example icon-button with menu icon" (click)="showMenu(false)">
+        <mat-icon>close</mat-icon>
+      </button>
+    </ng-template>
+</header>
+
+
+<div class="menu_items" *ngIf="visible" (click)="showMenu(false)">
+    <a mat-button color="basic" href="#hero">CRYPTO</a>
+    <a mat-button color="basic" href="#crypto">ABOUT</a>
+    <a mat-button color="basic" href="#feature">FEATURES</a>
+    <a mat-button color="basic" href="#help">HELP</a>
+    <a class="bt" mat-button color="basic" href="#footer">CONTACT</a>
+</div>
+
+
+
+<main>
   <!-- Hero Section -->
-  <div class="hero" id="hero">
+<section class="hero" id="hero">
     <div class="hero-text">
-      <div id="blank-space"></div>
       <div class="back-hero-text">
         <div class="line"></div>
         <h3>THE WORLD'S FASTEST</h3>
@@ -30,13 +52,11 @@
       <button>LEAN MORE</button>
     </div>
     <div class="cryptos" id="crypto">
-      <div class="carousel">
-        <!-- add carussel carousel-items -->
         <div class="carousel-item">
           <div class="crypt-title">
             <img src="../../../assets/img/ether.png" alt="crytocurrency">
             <h3>Ethereum</h3>
-          </div>
+          </div><br>
           <h4>1 ETH = 3.02050 BTC</h4>
           <h5>+ 0.4%</h5>
         </div>
@@ -44,7 +64,7 @@
           <div class="crypt-title">
             <img src="../../../assets/img/ether.png" alt="">
             <h3>Ethereum</h3>
-          </div>
+          </div><br>
           <h4>1 ETH = 3.02050 BTC</h4>
           <h5>+ 0.4%</h5>
         </div>
@@ -52,7 +72,7 @@
           <div class="crypt-title">
             <img src="../../../assets/img/ether.png" alt="">
             <h3>Ethereum</h3>
-          </div>
+          </div><br>
           <h4>1 ETH = 3.02050 BTC</h4>
           <h5>+ 0.4%</h5>
         </div>
@@ -60,7 +80,7 @@
           <div class="crypt-title">
             <img src="../../../assets/img/ether.png" alt="">
             <h3>Ethereum</h3>
-          </div>
+          </div><br>
           <h4>1 ETH = 3.02050 BTC</h4>
           <h5>+ 0.4%</h5>
         </div>
@@ -68,15 +88,16 @@
           <div class="crypt-title">
             <img src="../../../assets/img/ether.png" alt="">
             <h3>Ethereum</h3>
-          </div>
+          </div><br>
           <h4>1 ETH = 3.02050 BTC</h4>
           <h5>+ 0.4%</h5>
         </div>
-      </div>
     </div>
-  </div>
+</section>
+
+
   <!-- About Section -->
-  <div class="about-section" id="about">
+<section class="about-section" id="about">
     <div class="about-block">
       <div class="text-about-container">
         <h1>WHY WE'RE #1</h1>
@@ -96,12 +117,12 @@
       <div class="data-view-item">
         <img src="" alt="">
         <h1>100%</h1>
-        <h4>transactions complete<br>in minutes</h4>
+        <h4>Transactions complete<br>in minutes</h4>
       </div>
       <div class="data-view-item">
         <img src="" alt="">
         <h1>95%</h1>
-        <h4>client retention rate</h4>
+        <h4>Client retention rate</h4>
       </div>
       <div class="data-view-item">
         <img src="" alt="">
@@ -109,9 +130,11 @@
         <h4>Users</h4>
       </div>
     </div>
-  </div>
+</section>
+
+
   <!-- Features Section -->
-  <div class="feature-section" id="feature">
+<section class="feature-section" id="feature">
     <div class="feature-img">
       <img src="../../../assets/img/feature-img.png" alt="">
     </div>
@@ -124,11 +147,13 @@
         <li class="feature-list-item">Fast, secure, simple and intuitive token trading.</li>
         <li class="feature-list-item">Rewards for inviting new users.</li>
       </ul>
-    <div class="btn-open-account"><button><a href="">Open Free Account</a></button></div>
+      <div class="btn-open-account"><button><a href="">Open Free Account</a></button></div>
     </div>
-  </div>
-  <!-- Help Section -->
-  <div class="help-section" id="help">
+</section>
+
+
+<!-- Help Section -->
+<section class="help-section" id="help">
     <div class="help-text">
       <h1>HOW TO TRADE WITH US</h1>
       <p>We focus on begin able to procide a good user experience, so trading on PokeSwap
@@ -158,25 +183,25 @@
     <div class="help-img">
       <img src="../../../assets/img/img-help.png" alt="cryptocurrencies">
     </div>
-  </div>
-  <div class="btn-open-account"><button><a href="">Open Free Account</a></button></div>
+</section>
+
+
 <!-- Product Section -->
-<div class="community-section">
+<section class="community-section">
   <div class="community-text">
     <h1>LEARN MORE ABOUT OUR PRODUCT</h1>
     <p>Here you can see a Video where one of our team members explains how PokeSwap works.
     </p>
   </div>
-  <video width="1200" height="680" controls>
+  <video width="75%" height="500px" controls>
     <source src="" type="video/mp4">
   Your browser does not support the video tag.
   </video>
-  Video en Proceso
-</div>
-<div class="blank-space">
-</div>
-  <!-- Community Section -->
-  <div class="community-section">
+</section>
+
+
+<!-- Community Section -->
+<section class="community-section">
     <div class="community-text">
       <h1>WHAT OUR TRADERS SAY</h1>
       <p>By offerign a dex platform for buying and sellign tokens and cryptocurrencies
@@ -221,26 +246,25 @@
         </div>
       </div>
     </div>
-  </div>
-  <div class="blank-space">
-  </div>
-   <!-- Team Section -->
-   <div class="community-section">
+</section>
+
+
+<!-- Team Section -->
+<section class="community-section">
     <div class="community-text">
       <h1>ABOUT THE TEAM</h1>
       <p>Learn more about our incredible team that developed the PokeSwap Web Aplication.
       </p>
     </div>
-    <video width="1200" height="680" controls>
+    <video width="75%" height="500px" controls>
       <source src="" type="video/mp4">
     Your browser does not support the video tag.
     </video>
-    Video en Proceso
-  </div>
-  <div class="blank-space">
-  </div>
+</section>
+
+
   <!-- Disclaimer section -->
-  <div class="disclaimer-section">
+<section class="disclaimer-section">
     <h1>DISCLAIMER</h1>
     <p>Regal Assets recommends that you carefully evaluate and research the 
       risks and rewards associated with investing in physical precious metals 
@@ -250,10 +274,13 @@
       regarding clients personal investment portfolios. Regal Assets account 
       executives are only authorized to sell Regal Assets crypto products. For more 
       information please review our Risk Disclosures and Privacy Policy.</p>
-  </div>
-  <!-- Footer section -->
-  <footer id="footer">
-    <div class="footer-text">
+</section>
+</main>
+
+
+<!-- Footer section -->
+<footer id="footer">
+      <div class="footer-text">
         <p>Contactanos:</p>
       </div>
       <div class="footer-social">
@@ -274,4 +301,4 @@
           </li>
         </ul>
       </div>
-  </footer>
+</footer>
