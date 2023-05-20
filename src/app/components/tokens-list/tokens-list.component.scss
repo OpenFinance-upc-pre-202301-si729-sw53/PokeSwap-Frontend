@@ -1,44 +1,87 @@
-.instr {
-    width: 80%;
-    margin: auto;
-    padding-top: 2rem;
+img {
+    width: 50px;
+    margin-right: 10px;
 }
 
-.header {
-    font-size: 2rem;
-    font-weight: bold;
-    text-align: center;
-    margin-bottom: 2rem;
+button {
+    margin-right: 8px;
 }
 
-.note {
-    font-size: 1.2rem;
-    text-align: center;
-    margin-bottom: 3rem;
-}
-
-.steps {
-    list-style: none;
-    font-size: 1.2rem;
-    margin-left: 0;
-    padding-left: 0;
-}
-
-.steps li {
-    margin-bottom: 2rem;
-}
-
-.steps li span {
-    font-weight: bold;
-    margin-bottom: 1rem;
-    display: block;
-}
-
-.steps li p {
-    margin: 0;
+.example-spacer {
+    flex: 1 1 auto;
 }
 
 
 
+.menu_items {
+    display: flex;
+    flex-direction: column;
+    width: 100vw;
+    height: -100vh;
+}
+
+.container_toolbar {
+    height: 80px;
+    position: relative;
+    z-index: 100;
+}
+
+.bt_close {
+    background-color: brown;
+}
 
 
+
+/*  STYLE RESPONSIVE__________________________________________  */
+  
+  /* Estilos para dispositivos medianos (de hasta 992px) */
+@media only screen and (max-width: 992px) {
+    .container_toolbar {
+        .bt_toolbar {
+            display: none;
+        }
+
+        .bt_menu {
+            display: block;
+        }
+    }
+
+    .bt_menu {
+        display: flex;
+    }
+
+    .menu_items {
+        position: fixed;
+        top: 0;
+        left: 0;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        width: 100vw;
+        height: 100vh;
+        background-color: white;
+        transition: all 2s;
+        z-index: 10;
+
+        button {
+            margin-top: 10px;
+        }
+
+        .bt {
+            margin-bottom: 10px;
+            padding: 20px 30px;
+        }
+        a {
+            padding-bottom: 50px;
+            font-size: large;
+        }
+    }
+}
+  
+  /* Estilos para dispositivos grandes (más de 993px) */
+@media only screen and (min-width: 993px) {
+    .bt_menu {
+        display: none;
+    }
+}
