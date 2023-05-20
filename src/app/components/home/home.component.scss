@@ -1,27 +1,10 @@
-*{
-    padding: 0;
-    //font-family: 'Montserrat', sans-serif;
-}
-
-html {
-    scroll-behavior: smooth;
-}
-
-body {
-    margin: 0;
-}
-
-::-webkit-scrollbar {
-    display: none;
-}
-
 /* Header Section */
 
 header {
     display: flex;
     flex-direction: row;
     justify-content: space-around;
-    height: 60px;
+    height: 80px;
     width: 100%;
     position: fixed;
     top: 0;
@@ -47,7 +30,7 @@ header .logo img {
 }
 
 header .logo h1 {
-    margin: auto;
+    margin: 15px;
     color: #FF4DD8;
 }
 
@@ -94,6 +77,7 @@ header .menu .menu-item a:hover {
     font-weight: bold;
     padding: 10px 20px;
     border-radius: 5px;
+    margin: auto 0;
     border: none;
     cursor: pointer;
 }
@@ -117,27 +101,31 @@ header .menu .menu-item a:hover {
 
 /* ------------- Main Section ------------------ */
 
+section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    margin: 25px 0;
+}
+
+
+
 /* Hero Section */
 
 .hero {
-    margin: 0;
-    display: flex;
+    flex-wrap: nowrap;
     flex-direction: column;
-    justify-content: space-evenly;
-    align-items: center;
-    height: 600px;
     width: 100%;
 }
 
-#blank-space {
-    height: 115px;
+.hero-text {
+    width: 70%;
 }
 
 .back-hero-text {
     display: flex;
-    flex-direction: row;
-    width: 60%;
-    justify-content: space-between;
+    margin-top: 115px;
 }
 
 .line {
@@ -157,8 +145,6 @@ header .menu .menu-item a:hover {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    height: 100%;
-    width: 100%;
     text-align: center;
 }
 
@@ -168,7 +154,6 @@ header .menu .menu-item a:hover {
     font-weight: 900;
     background: linear-gradient(90deg, #9747FF 0%, #FF4DD8 100%);
     -webkit-background-clip: text;
-    position: relative;
 }
 
 .hero-text h4 {
@@ -187,47 +172,32 @@ header .menu .menu-item a:hover {
     margin: 10px 0;
 }
 
+
+
 /* Cryto Section */
 
 .cryptos {
-    align-items: center;
-    height: 400px;
-    width: 100%;
-    background-color: #fff;
-}
-
-
-
-.carousel {
     display: flex;
-    flex-direction: row;
-    justify-content: space-between;
+    flex-wrap: wrap;
+    justify-content: center;
     align-items: center;
-    height: 100%;
+    min-height: 500px;
     width: 100%;
 }
 
 .carousel-item {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    height: 70%;
-    width: 100%;
+    height: 125px;
     background-color: #000;
     border-radius: 5px;
     box-shadow: 0 0 10px rgba(0,0,0,0.5);
-    margin: auto 10px;
+    margin: 50px;
+    padding: 20px;
     color: #fff;
 }
 
 .carousel-item .crypt-title {
-    width: 90%;
     display: flex;
     align-items: center;
-    margin: 5px auto ;
-    position: relative;
-    bottom: 20px;
 }
 
 .carousel-item img {
@@ -235,48 +205,25 @@ header .menu .menu-item a:hover {
     width: 50px;
 }
 
-.carousel-item h3 {
-    font-size: 1rem;
-    font-weight: medium;
-}
 
-/*Price crytocurrency  */
-.carousel-item h4 {
-    width: 80%;
-    margin: 0;
-    font-weight: normal;
-    justify-content: left;
-}
-
-.carousel-item h5 {
-    width: 80%;
-    margin: 2px auto;
-    font-weight: lighter;
-    justify-content: left;
-}
 
 /* About Section */
 
-.about-section {
-    height: 540px;
-    width: 100%;
-}
-
 .about-block {
-    margin: 0;
-    padding: 0;
+    width: 100vw;
     display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap; 
+    margin: 50px;
 }
 
 .text-about-container {
     display: flex;
-    position: relative;
     flex-direction: column;
-    justify-content: left;
     align-items: center;
     padding: 50px;
-    width: 50%;
-    margin: 0;
+    width: 525px;
 }
 
 .text-about-container h1 {
@@ -285,7 +232,6 @@ header .menu .menu-item a:hover {
     font-weight: 800;
     background: linear-gradient(90deg, #9747FF 0%, #FF4DD8 100%);
     -webkit-background-clip: text;
-    position: relative;
 }
 
 .text-about-container p {
@@ -294,58 +240,44 @@ header .menu .menu-item a:hover {
 }
 
 .about-section .about-img {
-    display: flex;
-    align-items: center;
-    width: 50%;
+    width: 475px;
+    text-align: center;
 }
 
 .about-section .about-img img {
     box-shadow: 0 0 10px rgba(0,0,0,0.5);
-    left: 100px;
-    height: 200px;
-    width: 400px;
+    height: 250px;
+    width: 450px;
     transform: perspective(4cm) rotateY(352deg) rotateX(2deg);
 }
 
 .data-view {
+    width: 1500px;
     display: flex;
-    flex-direction: row;
-    justify-content: space-around;
+    flex-wrap: wrap;
+    justify-content: center;
     align-items: center;
-    width: 100%;
-    height: 100px;
-    margin: 0;
+    margin: 50px;
 }
 
-.data-view-item h1 {
-    margin: auto;
+.data-view-item {
+    text-align: center;
+    width: 350px;
 }
 
-.data-view-item h4 {
-    margin: 0;
-}
+
 
 /* Feature Section */
 
-.feature-section {
-    height: 500px;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-}
-
 .feature-img {
-    display: flex;
-    -ms-flex-align: center;
-    width: 50%;
-    height:  100%;
+    width: 425px;
+    margin: 20px;
 }
 
 .feature-img img {
     margin: auto;
     box-shadow: 0 0 10px rgba(0,0,0,0.5);
-    height: 70%;
-    /* transform: perspective(4cm) rotateY(10deg) rotateX(2deg); */
+    width: 100%;
 }
 
 .feature-text {
@@ -353,8 +285,8 @@ header .menu .menu-item a:hover {
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
-    width: 60%;
-    height: 100%;
+    width: 500px;
+    margin: 50px;
 }
 
 .feature-text h1 {
@@ -363,14 +295,11 @@ header .menu .menu-item a:hover {
     font-weight: 800;
     background: linear-gradient(90deg, #9747FF 0%, #FF4DD8 100%);
     -webkit-background-clip: text;
-    position: relative;
 }
 
 .feature-list-item {
     display: flex;
     flex-direction: column;
-    align-items: left;
-    width: 100%;
     margin: 30px 0;
 }
 
@@ -378,22 +307,26 @@ header .menu .menu-item a:hover {
     background-color: #9747FF;
 }
 
+.btn-open-account {
+    height: 35px;
+}
+
+
+
 /* help section */
 
 .help-section {
-    width: 100%;
     display: flex;
-    padding-top: 50px;
+    padding-top: 100px;
     flex-direction: row;
 }
 
 .help-section .help-text {
     display: flex;
     flex-direction: column;
-    justify-content: center;
     align-items: center;
-    padding: auto 50px;
-    width: 50%;
+    width: 500px;
+    margin: 40px;
 }
 
 .help-section .help-text h1 {
@@ -402,12 +335,11 @@ header .menu .menu-item a:hover {
     font-weight: 800;
     background: linear-gradient(90deg, #9747FF 0%, #FF4DD8 100%);
     -webkit-background-clip: text;
-    position: relative;
     padding: 10px;
+    width: 100%;
 }
 
 .help-section .help-text p {
-    font-size: 1rem;
     font-weight: regular;
     width: 80%;
 }
@@ -423,8 +355,8 @@ header .menu .menu-item a:hover {
     justify-content: center;
     align-items: center;
     width: 100%;
-    height: 70%;
     padding: 10px;
+    margin: 20px;
 }
 
 .help-box h3 {
@@ -435,17 +367,18 @@ header .menu .menu-item a:hover {
     -webkit-background-clip: text;
 }
 
-
 .help-section .help-img {
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 50%;
+    width: 500px;
+    margin-bottom: 150px;
+    margin: 40px;
 }
 
 .help-section .help-img img {
     box-shadow: 0 0 10px rgba(0,0,0,0.5);
-    width: 40vw;
+    width: 400px;
     transform: rotate(-10deg);
 }
 
@@ -455,16 +388,29 @@ header .menu .menu-item a:hover {
     justify-content: center;
     align-items: center;
     width: 140px;
+    margin-bottom: 150px;
 }
+
+.btn-open-account {
+    margin-right: 125px;
+}
+
+
 
 /* Community */
 
 .community-section {
-    display: flex;
+    flex-wrap: nowrap;
     flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
+    min-height: 750px;
+}
+
+.community-text {
+    width: 75%;
+}
+
+video {
+    margin: auto;
 }
 
 .community-section h1 {
@@ -473,7 +419,6 @@ header .menu .menu-item a:hover {
     font-weight: 800;
     background: linear-gradient(90deg, #9747FF 0%, #FF4DD8 100%);
     -webkit-background-clip: text;
-    position: relative;
     padding: 10px;
     padding-left: 40px;
     margin: auto;
@@ -490,16 +435,15 @@ header .menu .menu-item a:hover {
 
 .community-cards {
     display: flex;
-    flex-direction: row;
-    justify-content: space-around;
+    flex-wrap: wrap;
+    justify-content: center;
     align-items: center;
     width: 100%;
-    height: 100%;
 }
 
 .community-card {
     display: flex;
-    margin: auto 30px;
+    margin: 30px;
     flex-direction: column;
     justify-content: center;
     align-items: center;
@@ -518,18 +462,15 @@ header .menu .menu-item a:hover {
 }
 
 .blank-space {
-    height: 50px;
+    height: 100px;
 }
 
-.disclaimer-section
-{
+.disclaimer-section {
     display: flex;
-    flex-direction: column;
+    max-height: 20vh;
     justify-content: center;
     padding: 30px 0;
     align-items: center;
-    width: 100%;
-    height: 100%;
     background-color: rgba(151, 71, 255, 0.459);
     color: rgb(0, 0, 0);
 }
@@ -539,10 +480,11 @@ header .menu .menu-item a:hover {
 }
 
 .disclaimer-section p {
-    text-align: justify;  
-    margin: auto 50px; 
+    margin: 0 175px; 
     font-size: small;
 }
+
+
 
 /* Footer */
 
@@ -550,24 +492,25 @@ footer {
     display: flex;
     flex-direction: row;
     justify-content:center;
-    width: 100%;
     background-color: white;
     box-shadow: 0 0 10px rgba(0,0,0,0.5);
 }
 
 .footer-text {
     width: 30%;
-    margin: auto;
+    margin: 0 150px;
 }
 
 .footer-text p {
     font-size: large;
     font-weight: bold;
+    margin-top: 25px;
     padding-left: 100px;
 }
 
 .footer-social {
     width: 70%;
+    margin: 0 150px;
 }
 
 .footer-social-list {
@@ -579,4 +522,155 @@ footer {
     list-style: none;
     text-decoration: none;
     margin: auto;
+}
+
+.bt_close {
+    background-color: brown;
+    margin: auto 0;
+    margin-left: 20px;
+}
+
+.bt_menu {
+    display: flex;
+    background-color: blueviolet;
+    margin: auto 0;
+    margin-left: 20px;
+}
+
+
+
+
+/*  STYLE RESPONSIVE__________________________________________  */
+
+/* Estilos para dispositivos pequeños (hasta 650px) */
+@media only screen and (max-width: 650px) {
+
+    header {
+        justify-content: left;
+    }
+
+    .carousel-item {
+        height: 150px;
+    }
+
+    .data-view {
+        width: 75%;
+    }
+
+    .disclaimer-section {
+        max-height: 80vh;
+    }
+    
+    .disclaimer-section p {
+        margin: 0 25px;
+        text-align: center;
+    }
+
+    .about-img {
+        img {
+            transform: none !important;
+            width: 75% !important;
+        }
+    }
+
+    .feature-img {
+        text-align: center;
+
+        img {
+            width: 75%;
+        }
+    }
+
+    .feature-text {
+        width: 75%;
+    }
+
+    .help-box {
+        width: 75px;
+    }
+
+    .help-img {
+        img {
+            width: 75% !important;
+        }
+    }
+
+    .help-text {
+        width: 75% !important;
+    }
+
+    .text-about-container {
+        width: 75%;
+    }
+
+    .cryptos {
+        width: 75%;
+    }
+
+    .community-section {
+        min-height: 350px;
+    }
+}
+  
+/* Estilos para dispositivos medianos (de 651px a 1104px) */
+@media only screen and (max-width: 1104px)  {
+
+    .disclaimer-section {
+        max-height: 50vh;
+    }
+
+    .footer-text {
+        display: none;
+    }
+
+    .footer-social {
+        margin: auto;
+
+        .footer-social-list {
+            padding: 0;
+        }
+    }
+
+    .menu_items {
+        position: fixed;
+        top: 0;
+        left: 0;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        width: 100vw;
+        height: 100vh;
+        background-color: white;
+        transition: all 2s;
+        z-index: 10;
+
+        button {
+            margin-top: 10px;
+        }
+
+        .bt {
+            margin-bottom: 10px;
+            padding: 20px 30px;
+        }
+        a {
+            padding-bottom: 50px;
+            font-size: large;
+        }
+    }
+
+    .navbar {
+        display: none;
+    }
+
+    .btn-open-account {
+        display: none;
+    }
+}
+  
+/* Estilos para dispositivos grandes (más de 1105px) */
+@media only screen and (min-width: 1105px){
+    .bt_menu {
+        display: none;
+    }
 }
