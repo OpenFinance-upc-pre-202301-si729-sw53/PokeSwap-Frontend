@@ -14,7 +14,7 @@
 }
 
 .token {
-  width: 80%;
+  width: 75%;
   background-color: #1b1b1b;
   margin-bottom: 40px;
   border-radius: 20px;
@@ -41,11 +41,32 @@
   margin-left: auto;
 }
 
-.token-amount span:first-child {
-  margin-right: 5px;
-}
-
 button {
   margin-left: 20px;
   background-color:white;
+}
+
+
+/*  STYLE RESPONSIVE__________________________________________  */
+
+@media only screen and (max-width: 576px) {
+  span {
+    display: none;
+  }
+
+  button {
+    margin-left: 5px;
+  }
+
+  .token {
+    width: 85%;
+  }
+
+  h2 {
+    font-size: 17px;
+  }
+
+  .token-name {
+    margin-left: 10px;
+  }
 }
