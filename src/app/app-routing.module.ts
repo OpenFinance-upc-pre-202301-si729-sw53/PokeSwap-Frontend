@@ -9,6 +9,7 @@ import { TokenComponent } from './components/token/token.component';
 import { TokensListComponent } from './components/tokens-list/tokens-list.component';
 import { RegisterComponent } from './components/register/register.component';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
+import { OperationsComponent } from './components/operations/operations.component';
 
 const routes: Routes = [
   { path: '', redirectTo: 'home', pathMatch: 'full' },
@@ -25,6 +26,9 @@ const routes: Routes = [
   { path: 'dashboard/exchange', component: ExchangeComponent, pathMatch: 'full' },
   { path: 'portfolio', redirectTo: 'dashboard/portfolio'},
   { path: 'dashboard/portfolio', component: TokensListComponent, pathMatch: 'full' },
+  { path: 'operations', redirectTo: 'dashboard/operations'},
+  { path: 'dashboard/operations', component: OperationsComponent, pathMatch: 'full' },
+
 ];
 
 @NgModule({
