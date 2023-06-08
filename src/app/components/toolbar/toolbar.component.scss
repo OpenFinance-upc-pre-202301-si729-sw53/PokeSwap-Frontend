@@ -10,3 +10,58 @@ button {
 .example-spacer {
     flex: 1 1 auto;
 }
+
+
+@media only screen and (max-width: 400px) {
+
+}
+
+/* Estilos para dispositivos pequeÃ±os (hasta 650px) */
+@media only screen and (max-width: 650px) {
+    .bt_menu, .bt_close {
+        margin-right: 5px;
+    }
+}
+
+/* Estilos para dispositivos medianos (de 651px a 1104px) */
+@media only screen and (max-width: 899px) {
+    .menu_items {
+        position: fixed;
+        top: 80px;
+        left: 0;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        width: 100vw;
+        height: 100vh;
+        background-color: white;
+        transition: all 2s;
+        z-index: 10;
+    }
+
+    .menu_items button {
+        margin-top: 10px;
+    }
+
+    .menu_items .bt {
+        margin-bottom: 10px;
+        padding: 20px 30px;
+    }
+
+    .menu_items a {
+        padding-bottom: 50px;
+        font-size: large;
+    }
+
+    .navbar {
+        display: none;
+    }
+}
+
+/* Estilos para dispositivos grandes (mas de 1105px) */
+@media only screen and (min-width: 900px) {
+    .bt_menu {
+        display: none;
+    }
+}
