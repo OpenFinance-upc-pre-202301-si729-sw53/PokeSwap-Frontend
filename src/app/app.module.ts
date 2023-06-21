@@ -17,6 +17,7 @@ import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { RegisterComponent } from './components/register/register.component';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
+import { OperationsComponent } from './components/operations/operations.component';
 
 @NgModule({
   declarations: [
@@ -32,6 +33,7 @@ import { DashboardComponent } from './components/dashboard/dashboard.component';
     TokensListComponent,
     RegisterComponent,
     DashboardComponent,
+    OperationsComponent,
   ],
   imports: [
     BrowserModule,

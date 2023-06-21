@@ -3,15 +3,46 @@
   <a mat-button href="/dashboard/currencies">PokeSwap</a>
   <span class="example-spacer"></span>
 
-  <div class="navbar">
-    <ul class="menu">
-      <button mat-fab extended color="primary" aria-label="Button for 'portfolio'"routerLink="portfolio">Portfolio</button>
-      <button mat-fab extended color="primary" aria-label="Button for 'currencies'" routerLink="currencies">Currencies</button>
-      <button mat-fab extended color="primary" aria-label="Button for 'token'" routerLink="token">Token</button>
-      <button mat-fab extended color="primary" aria-label="Button for 'exchange'" routerLink="exchange">Exchange</button>
-      <button mat-fab extended color="warn" aria-label="Button for 'exit' with exit icon" routerLink="login"><mat-icon>logout</mat-icon>LogOut</button>
-    </ul>
-  </div>
+  <button
+    mat-fab
+    extended
+    color="primary"
+    aria-label="Button for 'portfolio'"
+    routerLink="portfolio"
+  >
+    Portfolio
+  </button>
+
+  <button
+    mat-fab
+    extended
+    color="primary"
+    aria-label="Button for 'operations'"
+    routerLink="operations"
+  >
+    Operations
+  </button>
+
+  
+  <button
+    mat-fab
+    extended
+    color="primary"
+    aria-label="Button for 'currencies'"
+    routerLink="currencies"
+  >
+    Currencies
+  </button>
+
+  <button
+    mat-fab
+    extended
+    color="primary"
+    aria-label="Button for 'token'"
+    routerLink="token"
+  >
+    Token
+  </button>
 
   <button *ngIf="!visible; else bloqueElse" mat-icon-button class="bt_menu" aria-label="Example icon-button with menu icon" (click)="showMenu(true)">
     <mat-icon>menu</mat-icon>
