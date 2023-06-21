@@ -44,6 +44,28 @@
     Token
   </button>
 
+  <button
+    mat-fab
+    extended
+    color="primary"
+    aria-label="Button for 'exchange'"
+    routerLink="exchange"
+  >
+    Exchange
+  </button>
+
+
+  <button
+    mat-fab
+    extended
+    color="warn"
+    aria-label="Button for 'exit' with exit icon"
+    routerLink="login"
+  >
+    <mat-icon>logout</mat-icon>
+    LogOut
+  </button>
+
   <button *ngIf="!visible; else bloqueElse" mat-icon-button class="bt_menu" aria-label="Example icon-button with menu icon" (click)="showMenu(true)">
     <mat-icon>menu</mat-icon>
   </button>
