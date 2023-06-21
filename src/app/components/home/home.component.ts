@@ -6,5 +6,9 @@ import { Component } from '@angular/core';
   styleUrls: ['./home.component.scss']
 })
 export class HomeComponent {
+  visible: boolean = false;
 
+  showMenu(show: boolean): void {
+    this.visible = show;
+  }
 }

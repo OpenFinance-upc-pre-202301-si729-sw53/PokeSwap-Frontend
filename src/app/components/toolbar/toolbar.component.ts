@@ -6,5 +6,9 @@ import { Component } from '@angular/core';
   styleUrls: ['./toolbar.component.scss']
 })
 export class ToolbarComponent {
+  visible: boolean = false;
 
+  showMenu(show: boolean): void {
+    this.visible = show;
+  }
 }
