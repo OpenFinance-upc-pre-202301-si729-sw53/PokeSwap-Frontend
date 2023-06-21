@@ -31,6 +31,45 @@
         }
       ],
     "tokens": [
-        
+        {
+          "id": 1,
+          "balance": 10.10,
+          "exchangeRate": 50000.00,
+          "name": "Bitcoin",
+          "symbol": "BTC",
+          "wallet_id": 1
+        },
+        {
+          "id": 2,
+          "balance": 5.50,
+          "exchangeRate": 2500.00,
+          "name": "Ethereum",
+          "symbol": "ETH",
+          "wallet_id": 1
+        },
+        {
+          "id": 3,
+          "balance": 1000.00,
+          "exchangeRate": 0.50,
+          "name": "Dogecoin",
+          "symbol": "DOGE",
+          "wallet_id": 1
+        },
+        {
+          "id": 4,
+          "balance": 1200.00,
+          "exchangeRate": 1.20,
+          "name": "Ripple",
+          "symbol": "XRP",
+          "wallet_id": 1
+        },
+        {
+          "id": 5,
+          "balance": 25.00,
+          "exchange_rate": 200.00,
+          "name": "Litecoin",
+          "symbol": "LTC",
+          "wallet_id": 1
+        }
     ]      
 }

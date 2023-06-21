@@ -1,5 +1,8 @@
 export interface Token {
+    id: number;
+    balance: number;
+    exchange_rate: number;
     name: string;
-    quantity: number;
-    exchangeRate:number;
+    symbol: string;
+    wallet_id: number;
   }

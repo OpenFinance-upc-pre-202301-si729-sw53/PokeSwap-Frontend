@@ -24,8 +24,8 @@
     Wait Time: {{ exchange.time }}<br />
     Token Details:<br />
     Name: {{ token.name }}<br />
-    Quantity: {{ token.quantity }}<br />
-    Exchange Rate: {{ token.exchangeRate }}<br />
+    Quantity: {{ token.balance }}<br />
+    Exchange Rate: {{ token.exchange_rate }}<br />
     Max Exchange Amount (PEN): S./{{ quantity }} Max Exchange Amount (USD): ${{
       quantity
     }}
@@ -51,7 +51,7 @@
               matInput
               required
               type="number"
-              [(ngModel)]="token.quantity"
+              [(ngModel)]="token.balance"
               ng-change="myFunc()"
               [ngModelOptions]="{ standalone: true }"
             />
@@ -91,7 +91,7 @@
               autocomplete="off"
               type="number"
               disabled
-              [value]="token.quantity * token.exchangeRate * excV.value"
+              [value]="token.balance * token.exchange_rate * excV.value"
             />
           </mat-form-field>
           <div class="percentage">

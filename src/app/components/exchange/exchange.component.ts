@@ -54,26 +54,26 @@ export class ExchangeComponent {
     this.token = this.service.getToken();
     console.log(this.data, this.exchange, this.token)
     if (this.token) {
-      this.quantity = this.token.quantity * this.token.exchangeRate;
+      this.quantity = this.token.balance * this.token.exchange_rate;
       this.tokenArr.push(this.token);
     }
   }
 
   onSubmit(): void {
-    let num = this.token!.quantity * this.token!.exchangeRate * this.excV.value;
+    let num = this.token!.balance * this.token!.exchange_rate * this.excV.value;
     let operation = '2342' 
     const dialogRef = this.dialog.open(ExchangeDialog, {
       data: { name: operation, value: num },
     });
 
-    dialogRef.afterClosed().subscribe(result => {
+    dialogRef.afterClosed().subscribe((result: any) => {
       console.log('The dialog was closed');
       this.success = result;
     });
   }
 
   myFunc() {
-    this.quantity = this.token!.quantity * this.token!.exchangeRate * this.excArr[0].value;
+    this.quantity = this.token!.balance * this.token!.exchange_rate * this.excArr[0].value;
   }
   //Pago -> Facade
 }

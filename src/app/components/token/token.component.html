@@ -18,10 +18,10 @@
 <div class="token-container" style="color: whitesmoke;">
     <div class="token" *ngFor="let token of tokens">
       <div class="token-info">
-        <img src="https://www.freepnglogos.com/uploads/bitcoin-png/will-bitcoin-collapse-soon-moneyhighstreetm-6.png" alt="{{ token.name }} logo" width="50px" height="50px">
-        <div class="token-name">{{ token.name }}</div>
-        <div class="token-amount">{{ token.quantity }} {{ token.name }}</div>
-        <button mat-button (click)="useToken(token)">Use {{token.name}}</button>
+        <img src="https://www.freepnglogos.com/uploads/bitcoin-png/will-bitcoin-collapse-soon-moneyhighstreetm-6.png" alt="{{ token.symbol }} logo" width="50px" height="50px">
+        <div class="token-name">{{ token.symbol }}</div>
+        <div class="token-amount">{{ token.balance }} &nbsp; <span class="symbol"> {{ token.symbol }} </span> </div>
+        <button mat-button (click)="useToken(token)">Use {{token.symbol}}</button>
       </div>
     </div>
 </div>  
