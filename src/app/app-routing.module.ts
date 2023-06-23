@@ -10,6 +10,7 @@ import { TokensListComponent } from './components/tokens-list/tokens-list.compon
 import { RegisterComponent } from './components/register/register.component';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { OperationsComponent } from './components/operations/operations.component';
+import { WalletComponent } from './components/wallet/wallet.component';
 
 const routes: Routes = [
   { path: '', redirectTo: 'home', pathMatch: 'full' },
@@ -28,6 +29,8 @@ const routes: Routes = [
   { path: 'dashboard/portfolio', component: TokensListComponent, pathMatch: 'full' },
   { path: 'operations', redirectTo: 'dashboard/operations'},
   { path: 'dashboard/operations', component: OperationsComponent, pathMatch: 'full' },
+  { path: 'wallet', redirectTo: 'dashboard/wallet'},
+  { path: 'dashboard/wallet', component: WalletComponent, pathMatch: 'full' },
 
 ];
 

@@ -1,9 +1,54 @@
+.PortafolioContainer {
+  margin-top: 10px;
+  display: flex;
+  flex-direction: column;
+}
+
+.UserInformation{
+  display: flex;
+  flex-direction: row;
+  flex-flow: space-between;
+
+}
+
+.User_Card_Container{
+  display: flex;
+  margin: auto;
+}
+
+.User_Card_Form{
+  display: flex;
+  margin: auto;
+}
+
+.User_Card_LastOperation{
+  display: flex;
+  margin: auto;
+}
+
+.User_Card{
+  width: 350px;
+}
+
+.OperationCard{
+  width: 350px;
+}
+
+.Card_title{
+  color: #9747FF;
+  font-size: 30px;
+}
+
 .instr {
     font-size: large;
     padding: 50px;
     display: flex;
     justify-content: center;
     align-items: center;
+}
+
+.margin_input{
+  margin: 5px;
 }
 
 /*  STYLE RESPONSIVE__________________________________________  */

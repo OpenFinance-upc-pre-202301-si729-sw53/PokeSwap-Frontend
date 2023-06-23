@@ -14,10 +14,12 @@ import { ExchangeComponent, ExchangeDialog } from './components/exchange/exchang
 import { TokensListComponent } from './components/tokens-list/tokens-list.component';
 import { MaterialModule } from './shared/material.module';
 import { FormsModule } from '@angular/forms';
+import {MatFormFieldModule} from '@angular/material/form-field';
 import { HttpClientModule } from '@angular/common/http';
 import { RegisterComponent } from './components/register/register.component';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { OperationsComponent } from './components/operations/operations.component';
+import { WalletComponent } from './components/wallet/wallet.component';
 
 @NgModule({
   declarations: [
@@ -34,6 +36,7 @@ import { OperationsComponent } from './components/operations/operations.componen
     RegisterComponent,
     DashboardComponent,
     OperationsComponent,
+    WalletComponent,
   ],
   imports: [
     BrowserModule,
@@ -41,6 +44,7 @@ import { OperationsComponent } from './components/operations/operations.componen
     BrowserAnimationsModule,
     MaterialModule,
     FormsModule,
+    MatFormFieldModule,
     HttpClientModule
   ],
   providers: [],

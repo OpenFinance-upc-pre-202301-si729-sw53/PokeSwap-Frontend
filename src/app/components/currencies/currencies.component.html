@@ -5,57 +5,32 @@
     <p> Go to 'Portfolio' to see how to start trading!</p>
 </div>
 
-<div class="container">
+<div class="table_container">
+    <h1>Plataformas</h1>
+    <div class="mat-elevation-z8">
+        <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+            <ng-container matColumnDef="name">
+                <th mat-header-cell *matHeaderCellDef>Name</th>
+                <td mat-cell *matCellDef="let element">{{ element.name }}</td>
+            </ng-container>
     
-    <div class="card">
-        <div class="header">
-            {{exchanges[0].name}}
-        </div>
-        <div class="img">
-            <img src="../../../assets/img/Coinbase-logo.png" alt="Coinbase-logo" class="logo-class">
-        </div>
-        <div class="comision">
-            <span>Comisión: +{{exchanges[0].comision}}%</span>
-            <p> Minimun Desposit: {{exchanges[0].minimunDesposit}} $</p>
-        </div>
-        <div class="date">  
-            <span>Time: {{exchanges[0].time}}</span>
-        </div>
-        <button mat-button (click)="useExchange(exchanges[0])">Use {{exchanges[0].name}}</button>
-    </div>
+            <ng-container matColumnDef="comision">
+                <th mat-header-cell *matHeaderCellDef>Comision</th>
+                <td mat-cell *matCellDef="let element">{{ element.comision }}</td>
+            </ng-container>
     
-    <div class="card">
-        <div class="header">
-            {{exchanges[1].name}}
-        </div>
-        <div class="img">
-            <img src="../../../assets/img/Binance-logo.png" alt="Binance-logo" class="logo-class">
-        </div>
-        <div class="comision">
-            <span>Comisión: +{{exchanges[1].comision}}%</span>
-            <p> Minimun Desposit: {{exchanges[1].minimunDesposit}}%</p>
-        </div>
-        <div class="date">  
-            <span>Time: {{exchanges[1].time}}</span>
-        </div>
-        <button mat-button (click)="useExchange(exchanges[1])">Use {{exchanges[1].name}}</button>
+            <ng-container matColumnDef="minimunDesposit">
+                <th mat-header-cell *matHeaderCellDef>Deposito Minimo</th>
+                <td mat-cell *matCellDef="let element">{{ element.minimunDesposit }}</td>
+            </ng-container>
+    
+            <ng-container matColumnDef="time">
+                <th mat-header-cell *matHeaderCellDef>Tiempo</th>
+                <td mat-cell *matCellDef="let element">{{ element.time }}</td>
+            </ng-container>
+    
+            <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+            <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
+        </table>
     </div>
-
-    <div class="card">
-        <div class="header">
-            {{exchanges[2].name}}
-        </div>
-        <div class="img">
-            <img src="../../../assets/img/Huobi.png" alt="Bitfenix-logo" class="logo-class">
-        </div>
-        <div class="comision">
-            <span>Comisión: +{{exchanges[2].comision}}%</span>
-            <p> Minimun Desposit: {{exchanges[2].minimunDesposit}} $</p>
-        </div>
-        <div class="date">  
-            <span>Time: {{exchanges[2].time}}</span>
-        </div>
-        <button mat-button (click)="useExchange(exchanges[2])">Use {{exchanges[2].name}}</button>
-    </div>
-
 </div>
