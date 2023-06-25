@@ -2,16 +2,15 @@ import { Injectable } from '@angular/core';
 import { HttpClient, HttpErrorResponse, HttpHeaders } from '@angular/common/http';
 import { Observable, throwError, catchError, retry } from 'rxjs';
 
-import { Token } from '../models/token.model';
+import { Cryptos } from '../models/cryptos.model';
 import { environment } from 'src/environments/environment';
 
 @Injectable({
   providedIn: 'root'
 })
-export class TokenService {
+export class CryptosService {
 
-  // API_TOKEN = 'https://basic-crypto-rest-api-production.up.railway.app/api/pokeswap/v1/tokens';
-  API_TOKEN = 'https://pokeswap-data.onrender.com/tokens';
+  API_CRYPTO = 'https://pokeswap-rest-api.up.railway.app/api/pokeswap/v1/cryptos';
 
   constructor(private http: HttpClient) { }
 
@@ -29,30 +28,28 @@ export class TokenService {
     );
   }
 
-  get_Tokens(): Observable<Token> {
-    return this.http.get<Token>(this.API_TOKEN)
+  get_AllCryptos(): Observable<Cryptos> {
+    return this.http.get<Cryptos>(this.API_CRYPTO)
       .pipe(retry(1), catchError(this.checkError));
   }
 
-  get_Item(token_Id: string): Observable<Token> {
-    return this.http.get<Token>(`${this.API_TOKEN}/${token_Id}`)
+  get_Crypto(crypto_Id: string): Observable<Cryptos> {
+    return this.http.get<Cryptos>(`${this.API_CRYPTO}/${crypto_Id}`)
       .pipe(retry(1), catchError(this.checkError));
   }
 
-  create_Token(tokenData: Omit<Token, 'id'>): Observable<Token> {
-    return this.http.post<Token>(this.API_TOKEN, tokenData, this.httpOptions)
-      .pipe(
-        catchError(this.checkError)
-      );
-  }
-
-  update_Token(token_Id: string, token: Token): Observable<Token> {
-    return this.http.put<Token>(`${this.API_TOKEN}/${token_Id}`, JSON.stringify(token), this.httpOptions)
+  create_Crypto(cryptoData: Omit<Cryptos, 'id'>): Observable<Cryptos> {
+    return this.http.post<Cryptos>(this.API_CRYPTO, cryptoData, this.httpOptions)
       .pipe(retry(1), catchError(this.checkError));
   }
 
-  delete_Token(token_Id: string): Observable<Token> {
-    return this.http.delete<Token>(`${this.API_TOKEN}/${token_Id}`, this.httpOptions)
+  update_Crypto(crypto_Id: string, crypto: Cryptos): Observable<Cryptos> {
+    return this.http.put<Cryptos>(`${this.API_CRYPTO}/${crypto_Id}`, JSON.stringify(crypto), this.httpOptions)
+      .pipe(retry(1), catchError(this.checkError));
+  }
+
+  delete_Crypto(crypto_Id: string): Observable<Cryptos> {
+    return this.http.delete<Cryptos>(`${this.API_CRYPTO}/${crypto_Id}`, this.httpOptions)
       .pipe(retry(1), catchError(this.checkError));
   }
 }

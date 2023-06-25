@@ -3,7 +3,7 @@
 </div>
 
 <mat-card
-  *ngIf="data && exchange && token; else elseBlock2"
+  *ngIf="data && exchange && crypto; else elseBlock2"
   class="example-card"
 >
   <mat-card-header>
@@ -23,12 +23,10 @@
     Comission: {{ exchange.comision }}<br />
     Wait Time: {{ exchange.time }}<br />
     Token Details:<br />
-    Name: {{ token.name }}<br />
-    Quantity: {{ token.balance }}<br />
-    Exchange Rate: {{ token.exchange_rate }}<br />
-    Max Exchange Amount (PEN): S./{{ quantity }} Max Exchange Amount (USD): ${{
-      quantity
-    }}
+    Name: {{ crypto.name }}<br />
+    Quantity: {{ crypto.balance }}<br />
+    Exchange Rate: {{ crypto.exchange_rate }}<br />
+    Max Exchange Amount (PEN): S./{{ quantity }} Max Exchange Amount (USD): ${{ quantity }}
   </mat-card-content>
 </mat-card>
 
@@ -36,7 +34,7 @@
   <h1>Please login again.</h1>
 </ng-template>
 
-<div *ngIf="data && exchange && token; else elseBlock" class="allSwap">
+<div *ngIf="data && exchange && crypto; else elseBlock" class="allSwap">
   <form (submit)="onSubmit()" #exchangeForm="ngForm">
     <mat-card class="swapper">
       <mat-card-title class="title-text"
@@ -51,7 +49,7 @@
               matInput
               required
               type="number"
-              [(ngModel)]="token.balance"
+              [(ngModel)]="crypto.balance"
               ng-change="myFunc()"
               [ngModelOptions]="{ standalone: true }"
             />
@@ -67,7 +65,7 @@
             <mat-form-field>
               <mat-label>Coin</mat-label>
               <mat-select required>
-                <mat-option *ngFor="let tkn of tokenArr" [value]="tkn.name">
+                <mat-option *ngFor="let tkn of cryptoArr" [value]="tkn.name">
                   {{ tkn.name }}
                 </mat-option>
               </mat-select>
@@ -91,7 +89,7 @@
               autocomplete="off"
               type="number"
               disabled
-              [value]="token.balance * token.exchange_rate * excV.value"
+              [value]="crypto.balance * crypto.exchange_rate * excV.value"
             />
           </mat-form-field>
           <div class="percentage">

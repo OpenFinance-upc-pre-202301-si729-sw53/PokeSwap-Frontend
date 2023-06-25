@@ -1,8 +1,8 @@
 import { Component, ViewChild } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { Router } from '@angular/router';
-import { User } from 'src/app/models/user.model';
-import { UserService } from 'src/app/services/user.service';
+import { User } from 'src/app/models/users.model';
+import { UserService } from 'src/app/services/users.service';
 
 @Component({
   selector: 'app-register',
@@ -30,7 +30,7 @@ export class RegisterComponent {
       this.userData.id = maxId + 1;
       // Generate a new password hash
       const newPassword = this.userData.password; // Replace this with the logic to generate a new password
-      this.userData.password_hash = this.service.generatePasswordHash(newPassword);
+      this.userData.password = this.service.generatePasswordHash(newPassword);
     });
   }
   

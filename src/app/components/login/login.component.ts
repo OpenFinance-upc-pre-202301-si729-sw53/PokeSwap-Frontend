@@ -1,8 +1,9 @@
 import { Component, ViewChild } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { Router } from '@angular/router';
-import { User } from 'src/app/models/user.model';
+import { User } from 'src/app/models/users.model';
 import { AuthService } from 'src/app/services/auth.service';
+import { MatSnackBar } from '@angular/material/snack-bar';
 //John abc123
 @Component({
   selector: 'app-login',
@@ -16,7 +17,7 @@ export class LoginComponent {
   @ViewChild('userForm', { static: false })
   userForm!: NgForm;
 
-  constructor(private service: AuthService, public router: Router) {
+  constructor(private service: AuthService, public router: Router, private _snackBar: MatSnackBar) {
     this.userData = {} as User;
   }
 
@@ -24,11 +25,14 @@ export class LoginComponent {
     console.log(this.userData)
     if (await this.service.login(this.userData.name, this.userData.password)) {
       console.log('valid data')
+      this._snackBar.open('Inicio de sesion exitoso', '', { duration: 2000 });
       const redirectUrl = '/dashboard/portfolio';
       this.router.navigate([redirectUrl]);
     }
-    else console.log('invalid data')
-    this.userForm.resetForm();
-
+    else{
+      console.log('invalid data')
+      this._snackBar.open('Credenciales Invalidas', '', { duration: 2000 });
+      this.userForm.resetForm();
+    } 
   }
 }

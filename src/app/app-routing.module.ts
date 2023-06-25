@@ -23,6 +23,7 @@ const routes: Routes = [
   { path: 'token', redirectTo: '/dashboard/token'},
   { path: 'dashboard/token', component: TokenComponent, pathMatch: 'full' },
   { path: 'exchange', redirectTo: '/dashboard/exchange'},
+  // { path: 'exchange', redirectTo: '/dashboard'},
   { path: 'dashboard/exchange', component: ExchangeComponent, pathMatch: 'full' },
   { path: 'portfolio', redirectTo: 'dashboard/portfolio'},
   { path: 'dashboard/portfolio', component: TokensListComponent, pathMatch: 'full' },

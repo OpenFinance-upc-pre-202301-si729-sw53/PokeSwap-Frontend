@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { User } from '../models/user.model';
+import { User } from '../models/users.model';
 import { Observable, catchError, throwError } from 'rxjs';
 import { HttpClient, HttpErrorResponse, HttpHeaders } from '@angular/common/http';
 import { environment } from 'src/environments/environment';
@@ -10,7 +10,7 @@ import * as bcrypt from 'bcrypt';
 })
 export class UserService {
 
-  private baseURL: string = environment.baseURL; //URL to web api
+  baseURL = environment.baseURL;
 
   httpOptions = {
     headers: new HttpHeaders({

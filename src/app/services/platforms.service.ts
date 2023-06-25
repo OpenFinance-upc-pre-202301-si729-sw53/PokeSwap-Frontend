@@ -2,16 +2,15 @@ import { Injectable } from '@angular/core';
 import { HttpClient, HttpErrorResponse, HttpHeaders } from '@angular/common/http';
 import { Observable, throwError, catchError, retry } from 'rxjs';
 
-import { Token } from '../models/token.model';
+import { Platforms } from '../models/platforms.model';
 import { environment } from 'src/environments/environment';
 
 @Injectable({
   providedIn: 'root'
 })
-export class TokenService {
+export class PlatformsService {
 
-  // API_TOKEN = 'https://basic-crypto-rest-api-production.up.railway.app/api/pokeswap/v1/tokens';
-  API_TOKEN = 'https://pokeswap-data.onrender.com/tokens';
+  API_PLATFORM = 'https://pokeswap-rest-api.up.railway.app/api/pokeswap/v1/platforms';
 
   constructor(private http: HttpClient) { }
 
@@ -28,31 +27,29 @@ export class TokenService {
       'SOMETHING HAPPEND WITH REQUEST, TRY AGAIN.'
     );
   }
-
-  get_Tokens(): Observable<Token> {
-    return this.http.get<Token>(this.API_TOKEN)
+  
+  get_AllPlatforms(): Observable<Platforms> {
+    return this.http.get<Platforms>(this.API_PLATFORM)
       .pipe(retry(1), catchError(this.checkError));
   }
 
-  get_Item(token_Id: string): Observable<Token> {
-    return this.http.get<Token>(`${this.API_TOKEN}/${token_Id}`)
+  get_Platforms(platform_Id: string): Observable<Platforms> {
+    return this.http.get<Platforms>(`${this.API_PLATFORM}/${platform_Id}`)
       .pipe(retry(1), catchError(this.checkError));
   }
 
-  create_Token(tokenData: Omit<Token, 'id'>): Observable<Token> {
-    return this.http.post<Token>(this.API_TOKEN, tokenData, this.httpOptions)
-      .pipe(
-        catchError(this.checkError)
-      );
+  create_Platform(platformData: Omit<Platforms, 'id'>): Observable<Platforms> {
+    return this.http.post<Platforms>(this.API_PLATFORM, platformData, this.httpOptions)
+      .pipe(retry(1), catchError(this.checkError));
   }
-
-  update_Token(token_Id: string, token: Token): Observable<Token> {
-    return this.http.put<Token>(`${this.API_TOKEN}/${token_Id}`, JSON.stringify(token), this.httpOptions)
+  
+  update_Platform(platform_Id: string, operation: Platforms): Observable<Platforms> {
+    return this.http.put<Platforms>(`${this.API_PLATFORM}/${platform_Id}`, JSON.stringify(operation), this.httpOptions)
       .pipe(retry(1), catchError(this.checkError));
   }
 
-  delete_Token(token_Id: string): Observable<Token> {
-    return this.http.delete<Token>(`${this.API_TOKEN}/${token_Id}`, this.httpOptions)
+  delete_Platform(platform_Id: string): Observable<Platforms> {
+    return this.http.delete<Platforms>(`${this.API_PLATFORM}/${platform_Id}`, this.httpOptions)
       .pipe(retry(1), catchError(this.checkError));
   }
 }
