@@ -26,6 +26,10 @@ export class TokenComponent {
     this.exchange = this.service.getExchange();
   }
 
+  ngOnInit(): void {
+    this.showCryptos();
+  }
+
   showCryptos() {
     this.cryptoService.get_AllCryptos().subscribe((response: any) => {
       this.cryptos = response;

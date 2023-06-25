@@ -40,17 +40,17 @@ export class OperationsComponent {
 
   ngOnInit(){
     // this.createOperation();
-    // this.loadOperations();
-    this.dataSource.data = RecordData;
+    this.loadOperations();
+    // this.dataSource.data = RecordData;
     console.log(this.dataSource.data)
   }
 
-  // loadOperations(): void {
-  //   this.operationsService.get_AllOperations().subscribe((response: any) => {
-  //     this.dataSource.data = response;
-  //     console.log('Operations:', this.dataSource.data);
-  //   });
-  // }
+  loadOperations(): void {
+    this.operationsService.get_AllOperations().subscribe((response: any) => {
+      this.dataSource.data = response;
+      console.log('Operations:', this.dataSource.data);
+    });
+  }
 
   // operation: Operations = {
   //   user_id: 1,
