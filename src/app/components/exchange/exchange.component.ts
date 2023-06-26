@@ -50,9 +50,9 @@ export class ExchangeComponent {
 
 
   constructor(private service: AuthService, public dialog: MatDialog) {
-    this.data = this.service.getUserData();
-    this.exchange = this.service.getExchange();
-    this.crypto = this.service.getCrypto();
+    this.data = localStorage.getItem('user') ? JSON.parse(localStorage.getItem('user')!) : {};
+    this.exchange = this.service.getExchange() || {};
+    this.crypto = this.service.getCrypto() || {};
     console.log(this.data, this.exchange, this.crypto)
     if (this.crypto) {
       this.quantity = this.crypto.balance * this.crypto.exchangeRate;
