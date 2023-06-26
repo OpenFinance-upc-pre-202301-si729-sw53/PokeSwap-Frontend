@@ -1,29 +1,80 @@
-<div class="instr">
-    <div>
-        <h1 class="header">
-            How to Trade on Our Platform
-        </h1><br>
-        <p class="note">
-            Please note that all of these steps are performed automatically. You just need to learn the basic functionality and start trading!
-        </p><br>
-        <ul class="steps">
-            <li>
-                <span>Step 1: Select a Currency</span>
-                <p>Currencies are a crucial element in starting your trading journey. Go to the Currencies tab and select the one that best suits your needs.</p>
-            </li><br>
-            <li>
-                <span>Step 2: Select a Token</span>
-                <p>Tokens are the coins that you will be trading. In the first version, you have some bonus balance, so select the token that you like best and start trading!</p>
-            </li><br>
-            <li>
-                <span>Step 3: Make the Exchange</span>
-                <p>As this is a demo version, you will be performing exchanges with the platform. Don't worry, in the next version, you will be able to trade with other people!</p>
-            </li><br>
-        </ul><br>
-    
-        <p class="note">
-            User Panel, Token Portfolio & Peer-to-peer Trade Features coming soon!!!
-        </p>
+<div class="PortafolioContainer">
+    <div class="UserInformation">
+        <div class="User_Card_Container">
+            <mat-card class="User_Card">
+                <mat-card-header>
+                  <mat-card-title class="Card_title">Detalles de Usuario</mat-card-title>
+                </mat-card-header>
+                <mat-card-content>
+                    <mat-form-field class="User_Card_Form">
+                        <div>
+                            <p class="margin_input">
+                                <label>Nombre:</label>
+                                {{nombre}}
+                                <input matInput name="nombre" type="text" [(ngModel)]="newnombre"/>
+                            </p>
+                        </div>
+                        <div>
+                            <p class="margin_input">
+                                <label>Apellido:</label>
+                                {{apellido}}
+                                <input matInput name="apellido" type="text" [(ngModel)]="newapellido"/>
+                            </p>
+                        </div>
+                    </mat-form-field>
+                    <p>Correo: </p>
+                    <p>Edad: </p>
+                    <p>Ciudad: </p>
+                    <mat-divider></mat-divider>
+                </mat-card-content>
+                <mat-card-actions>
+                    <button mat-flat-button (click)="guardar()">Guardar</button>
+                </mat-card-actions>
+            </mat-card>
+        </div>
+        <div class="User_Card_LastOperation">
+            <mat-card class="OperationCard">
+                <mat-card-header>
+                  <mat-card-title class="Card_title">Ultima Operación</mat-card-title>
+                </mat-card-header>
+                <mat-card-content>
+                  <p>Moneda: </p>
+                  <p>Tipo: </p>
+                  <p>Monto: </p>
+                  <p>Precio: </p>
+                  <p>Fecha: </p>
+                  <p>Plataforma: </p>
+                </mat-card-content>
+            </mat-card>
+        </div>
+    </div>
+    <div class="instr">
+        <div>
+            <h1 class="header">
+                Cómo operar en nuestra plataforma
+            </h1><br>
+            <p class="note">
+                Tenga en cuenta que todos estos pasos se realizan automáticamente.
+                ¡Solo necesita aprender la funcionalidad básica y comenzar a operar!
+            </p><br>
+            <ul class="steps">
+                <li>
+                    <span>Paso 1: Seleccione una moneda</span>
+                    <p>Las divisas son un elemento crucial para comenzar su viaje comercial. Ve a la pestaña Currencies y selecciona la que mejor se adapte a tus necesidades.</p>
+                </li><br>
+                <li>
+                    <span>Paso 2: seleccione un Token</span>
+                    <p>Los tokens son las monedas que intercambiarás. En la primera versión, tiene un saldo de bonificación, ¡así que seleccione el token que más le guste y comience a operar!</p>
+                </li><br>
+                <li>
+                    <span>Paso 3: Haz el intercambio</span>
+                    <p>Como esta es una versión de demostración, realizará intercambios con la plataforma. ¡No se preocupe, en la próxima versión, podrá comerciar con otras personas!</p>
+                </li><br>
+            </ul><br>
+        
+            <p class="note">
+                Panel de usuario, cartera de tokens y funciones de comercio entre pares próximamente!!!
+            </p>
+        </div>
     </div>
 </div>
-
