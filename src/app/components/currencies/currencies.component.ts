@@ -25,7 +25,7 @@ export class CurrenciesComponent {
   ]
 
   constructor(private service: AuthService, public router: Router, private platformService: PlatformsService) {
-    this.data = this.service.getUserData();
+    this.data = localStorage.getItem('user') ? JSON.parse(localStorage.getItem('user')!) : {};
   }
   
   loadPlatform(): void {}

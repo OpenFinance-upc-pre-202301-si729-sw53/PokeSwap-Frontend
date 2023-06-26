@@ -22,7 +22,7 @@ export class TokenComponent {
   cryptos: Cryptos[] = [];
 
   constructor(private cryptoService: CryptosService, private service: AuthService, public router: Router) {
-    this.data = this.service.getUserData();
+    this.data = localStorage.getItem('user') ? JSON.parse(localStorage.getItem('user')!) : {};
     this.exchange = this.service.getExchange();
   }
 
