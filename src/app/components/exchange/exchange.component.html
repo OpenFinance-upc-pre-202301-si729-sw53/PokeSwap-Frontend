@@ -25,7 +25,7 @@
     Token Details:<br />
     Name: {{ crypto.name }}<br />
     Quantity: {{ crypto.balance }}<br />
-    Exchange Rate: {{ crypto.exchange_rate }}<br />
+    Exchange Rate: {{ crypto.exchangeRate }}<br />
     Max Exchange Amount (PEN): S./{{ quantity }} Max Exchange Amount (USD): ${{ quantity }}
   </mat-card-content>
 </mat-card>
@@ -89,7 +89,7 @@
               autocomplete="off"
               type="number"
               disabled
-              [value]="crypto.balance * crypto.exchange_rate * excV.value"
+              [value]="crypto.balance * crypto.exchangeRate * excV.value"
             />
           </mat-form-field>
           <div class="percentage">

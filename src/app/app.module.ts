@@ -18,6 +18,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { RegisterComponent } from './components/register/register.component';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { OperationsComponent } from './components/operations/operations.component';
+import { WalletComponent } from './components/wallet/wallet.component';
 
 @NgModule({
   declarations: [
@@ -34,6 +35,7 @@ import { OperationsComponent } from './components/operations/operations.componen
     RegisterComponent,
     DashboardComponent,
     OperationsComponent,
+    WalletComponent,
   ],
   imports: [
     BrowserModule,

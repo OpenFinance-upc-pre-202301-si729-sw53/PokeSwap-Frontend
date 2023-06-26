@@ -1,0 +1,33 @@
+
+.form_card {
+    max-width: 700px;
+    margin: auto;
+    top: 10%;
+}
+
+.actions_container{
+    display: flex;
+}
+
+.inputitem{
+    border: none;
+    border-bottom: 1px solid #9747FF;
+    font-size: 17px;
+    width: 50%;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+.Card_title{
+    color: #9747FF;
+    font-size: 30px;
+    font-weight: bold; 
+}
+
+.text_saldo{
+    color: rgb(56, 56, 56);
+    font-size: 50px;
+    font-weight: bold;
+    margin: 50px;
+    text-align: center;
+}

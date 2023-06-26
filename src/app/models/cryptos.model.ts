@@ -1,9 +1,11 @@
 export interface Cryptos {
     id: number,
     balance: number,
-    exchange_rate: number,
-    is_active: boolean,
+    exchangeRate: number,
+    isActive: boolean,
     name: string,
     symbol: string,
-    user_id: number
+    user: {
+        id: number;
+      };
 }

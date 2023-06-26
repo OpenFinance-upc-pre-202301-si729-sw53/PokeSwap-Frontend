@@ -33,6 +33,7 @@ export class OperationsComponent {
     'date',
     'status',
     'platform',
+    'action'
   ];
   dataSource = new MatTableDataSource();
 
@@ -47,13 +48,50 @@ export class OperationsComponent {
 
   loadOperations(): void {
     this.operationsService.get_AllOperations().subscribe((response: any) => {
-      this.dataSource.data = response;
+      const activeOperations = response.filter((o: any) => o.isActive === true);
+      this.dataSource.data = activeOperations;
       console.log('Operations:', this.dataSource.data);
     });
   }
 
+  Item :Operations = {} as Operations;
+
+  deleteItem(id: string){
+
+    const userObj = {
+      user: {
+        id: 1
+      }
+    };
+    this.operationsService.get_Operation(id).toPromise().then((response: any) => {
+      this.Item = response;
+      this.Item.user=userObj.user;
+      this.Item.isActive = false;
+      console.log('Operation to delete:', this.Item);
+
+      this.operationsService.update_Operation(id, this.Item).subscribe((response: any) => {
+          this.dataSource.data = this.dataSource.data.filter((o: any) => {
+            if(o.id !== id){
+              o = response;
+            }
+            else{
+              return o;
+            }
+          });
+      });
+    });
+
+    /*this.operationsService.delete_Operation(id).subscribe(
+      (response: any) => {
+        this.dataSource.data = this.dataSource.data.filter((o: any) => {
+          return o.id !== id? o :false;
+        });
+      });
+      console.log(this.dataSource.data);*/
+  }
+
   // operation: Operations = {
-  //   user_id: 1,
+  //   user_id: 1,aaaaaaa
   //   status: 'PENDING',
   //   type: 'CRYPTO_PURCHASE',
   //   from_crypto: 'BTC',

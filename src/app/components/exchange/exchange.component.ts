@@ -55,13 +55,13 @@ export class ExchangeComponent {
     this.crypto = this.service.getCrypto();
     console.log(this.data, this.exchange, this.crypto)
     if (this.crypto) {
-      this.quantity = this.crypto.balance * this.crypto.exchange_rate;
+      this.quantity = this.crypto.balance * this.crypto.exchangeRate;
       this.cryptoArr.push(this.crypto);
     }
   }
 
   onSubmit(): void {
-    let num = this.crypto!.balance * this.crypto!.exchange_rate * this.excV.value;
+    let num = this.crypto!.balance * this.crypto!.exchangeRate * this.excV.value;
     let operation = '2342' 
     const dialogRef = this.dialog.open(ExchangeDialog, {
       data: { name: operation, value: num },
@@ -74,7 +74,7 @@ export class ExchangeComponent {
   }
 
   myFunc() {
-    this.quantity = this.crypto!.balance * this.crypto!.exchange_rate * this.excArr[0].value;
+    this.quantity = this.crypto!.balance * this.crypto!.exchangeRate * this.excArr[0].value;
   }
   //Pago -> Facade
 }
