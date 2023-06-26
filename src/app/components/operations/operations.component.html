@@ -4,7 +4,7 @@
         <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
             <ng-container matColumnDef="coin">
               <th mat-header-cell *matHeaderCellDef>Coin</th>
-              <td mat-cell *matCellDef="let element">{{ element.coin }}</td>
+              <td mat-cell *matCellDef="let element">{{ element.toCrypto }}</td>
             </ng-container>
           
             <ng-container matColumnDef="type">
@@ -14,29 +14,31 @@
           
             <ng-container matColumnDef="amount">
               <th mat-header-cell *matHeaderCellDef>Amount</th>
-              <td mat-cell *matCellDef="let element">{{ element.amount }}</td>
+              <td mat-cell *matCellDef="let element">{{ element.fromAmount }}</td>
             </ng-container>
           
             <ng-container matColumnDef="price">
               <th mat-header-cell *matHeaderCellDef>Price</th>
-              <td mat-cell *matCellDef="let element">{{ element.price }} $</td>
+              <td mat-cell *matCellDef="let element">{{ element.toAmount }} $</td>
             </ng-container>
     
             <ng-container matColumnDef="date">
                 <th mat-header-cell *matHeaderCellDef>Date</th>
-                <td mat-cell *matCellDef="let element">{{ element.date }}</td>
+                <td mat-cell *matCellDef="let element">{{ element.operationDate }}</td>
               </ng-container>
+
+            <ng-container matColumnDef="status">
+              <th mat-header-cell *matHeaderCellDef>Status</th>
+              <td mat-cell *matCellDef="let element">{{ element.status }}</td>
+            </ng-container>
           
             <ng-container matColumnDef="platform">
               <th mat-header-cell *matHeaderCellDef>Platform</th>
               <td mat-cell *matCellDef="let element">{{ element.platform }}</td>
             </ng-container>
-
           
             <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
             <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
-
           </table>
-          
       </div>
 </div>

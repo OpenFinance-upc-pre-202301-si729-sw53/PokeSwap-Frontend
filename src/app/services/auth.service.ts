@@ -1,9 +1,9 @@
 import { Injectable } from '@angular/core';
-import { UserService } from './user.service';
-import { User } from '../models/user.model';
+import { UserService } from './users.service';
+import { User } from '../models/users.model';
 import { Exchange } from '../models/exchange.model';
 import { Token } from '../models/token.model';
-
+import { Cryptos } from '../models/cryptos.model';
 
 @Injectable({
   providedIn: 'root'
@@ -15,6 +15,7 @@ export class AuthService {
   redirectUrl: string | null = null;
   exchange: Exchange | undefined = undefined;
   token: Token | undefined = undefined;
+  crypto: Cryptos | undefined = undefined;
 
   constructor(private service: UserService) { }
 
@@ -26,6 +27,7 @@ export class AuthService {
       if (matchingUser) {
         this.isLoggedIn = true;
         this.userData = matchingUser;
+        console.log(this.userData);
         console.log('Logged in successfully');
         return true;
       }
@@ -53,8 +55,16 @@ export class AuthService {
     this.token = obj;
   }
 
+  setCrypto(obj: Cryptos): void {
+    this.crypto = obj;
+  }
+
   getToken(): Token {
     return this.token!;
+  }
+
+  getCrypto(): Cryptos {
+    return this.crypto!;
   }
 
   logout(): void {

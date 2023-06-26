@@ -14,7 +14,17 @@
               [(ngModel)]="userData.name"
             />
           </mat-form-field>
-
+          <mat-form-field appearance="fill">
+            <mat-label>Country</mat-label>
+            <input
+              matInput
+              placeholder="Country"
+              id="country"
+              name="country"
+              required
+              [(ngModel)]="userData.country"
+            />
+          </mat-form-field>
           <mat-form-field appearance="fill">
             <mat-label>Password</mat-label>
             <input
