@@ -5,6 +5,10 @@ export interface User {
     name:string,
     password:string,
     email:string,
-    password_hash:string,
+    phone: string,
+    address: string,
+    country: string,
+    is_active: boolean,
     created_at:Date,
+    password_hash:string,
 }

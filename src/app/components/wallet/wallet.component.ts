@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { HttpClient } from '@angular/common/http';
 
 @Component({
   selector: 'app-wallet',
@@ -14,7 +15,8 @@ export class WalletComponent implements OnInit{
 
   myForm!: FormGroup;
 
-  constructor(private formBuilder: FormBuilder) { }
+  constructor(private formBuilder: FormBuilder) {
+   }
 
   ngOnInit(){
     this.myForm = this.formBuilder.group({

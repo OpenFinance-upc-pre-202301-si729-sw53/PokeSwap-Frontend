@@ -1,19 +1,21 @@
 import { Component } from '@angular/core';
 import { MatTableDataSource } from '@angular/material/table';
+import { Operation } from 'src/app/models/operations.model';
+import { OperationService } from 'src/app/services/operation.service';
 
 interface IRecords{
-  coin: string;
+  to_crypto: string;
   type: string;
-  amount: number;
-  price: number;
-  date: string;
+  to_amount: number;
+  from_amount: number;
+  operation_date: string;
   platform: string;
 }
 
 const RecordData : IRecords[] = [
-  { coin: 'Bitcoin', type: 'Compra', amount: 0.5, price: 150.50, date: '2022-01-01', platform: 'Coinbase' },
-  { coin: 'Ethereum', type: 'Intercambio', amount: 2, price: 120, date: '2022-02-15', platform: 'Binance' },
-  { coin: 'Litecoin', type: 'Compra', amount: 5, price: 60, date: '2022-03-10', platform: 'Huobi' },
+  { to_crypto: 'Bitcoin', type: 'Compra', to_amount: 0.5, from_amount: 150.50, operation_date: '2022-01-01', platform: 'Coinbase' },
+  { to_crypto: 'Ethereum', type: 'Intercambio', to_amount: 2, from_amount: 120, operation_date: '2022-02-15', platform: 'Binance' },
+  { to_crypto: 'Litecoin', type: 'Compra', to_amount: 5, from_amount: 60, operation_date: '2022-03-10', platform: 'Huobi' },
 ];
 
 
@@ -25,18 +27,30 @@ const RecordData : IRecords[] = [
 })
 export class OperationsComponent {
   displayedColumns: string[] = [
-    'coin',
+    'to_crypto',
     'type',
-    'amount',
-    'price',
-    'date',
+    'to_amount',
+    'from_amount',
+    'operation_date',
     'platform',
   ];
+
+  operationsData!: Operation;
+
+  constructor(private operationService: OperationService) { 
+    this.operationsData = {} as Operation;
+  }
+
   dataSource = new MatTableDataSource();
 
   ngOnInit(){
     this.dataSource.data = RecordData;
     console.log(this.dataSource.data)
+    this.operationService.get_Operations().subscribe((data: Operation) => {
+      this.operationsData = data;
+      console.log('asdfasdf', this.operationsData);
+      /*this.dataSource.data = this.operationsData;*/
+    });
   }
   
 }
