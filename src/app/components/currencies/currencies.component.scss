@@ -1,3 +1,35 @@
+.table_container{
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    padding-top: 5%;
+    margin: auto;
+}
+
+.table_container h1{
+    font-family: 'Montserrat', sans-serif;
+    font-weight: bold;
+    color: #9747FF;
+    margin-left: 5%;
+    font-size: 30px;
+}
+
+.mat-elevation-z8{
+    background-color: rgb(241, 230, 241);
+    align-items: center;
+
+}
+
+.mat-elevation-z8 th{
+    background-color: #9747FF;
+    font-weight: bold;
+    font-family: 'Montserrat', sans-serif;
+    color: white;
+}
+
+//--------------------------------------------------------------------------------------------------------------------
+
 .container-ins{
     margin-top: 50px;
     display: flex;

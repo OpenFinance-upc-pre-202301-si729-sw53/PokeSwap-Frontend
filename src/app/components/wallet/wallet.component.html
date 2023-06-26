@@ -1,0 +1,34 @@
+<mat-card class="form_card">
+    <mat-card-header>
+      <mat-card-title class="Card_title">Billetera</mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+        <p class="text_saldo">{{ saldo }} $</p>
+        <mat-divider></mat-divider>
+    </mat-card-content>
+    <mat-form-field>
+        <div class="actions_container">
+            <div class="action">
+                <p>
+                    <mat-label>Retirar:</mat-label>
+                    <input matInput name="retiro" type="text" [(ngModel)]="retirardinero" class="inputitem"/>
+                    <button mat-mini-fab color="warn" (click)="RDinero()">-</button>
+                </p>
+            </div>
+            <div class="action">
+                <mat-label>Agregar:</mat-label>
+                <input matInput name="agregar" type="text" [(ngModel)]="agregardinero" class="inputitem"/>
+                <button mat-mini-fab color="primary" (click)="ADinero()">+</button>
+            </div>
+        </div>
+    </mat-form-field>
+    <mat-card-footer>
+      <mat-progress-bar mode="indeterminate"></mat-progress-bar>
+    </mat-card-footer>
+  </mat-card>
+
+
+
+<mat-form-field class="Wallet_Form">
+    
+</mat-form-field>

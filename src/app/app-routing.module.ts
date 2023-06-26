@@ -10,6 +10,7 @@ import { TokensListComponent } from './components/tokens-list/tokens-list.compon
 import { RegisterComponent } from './components/register/register.component';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { OperationsComponent } from './components/operations/operations.component';
+import { WalletComponent } from './components/wallet/wallet.component';
 
 const routes: Routes = [
   { path: '', redirectTo: 'home', pathMatch: 'full' },
@@ -18,10 +19,10 @@ const routes: Routes = [
   { path: 'register', component: RegisterComponent, pathMatch: 'full' },
   { path: 'users', component: UsersComponent, pathMatch: 'full' },
   { path: 'dashboard', component: DashboardComponent, pathMatch: 'full' },
-  { path: 'currencies', redirectTo: '/dashboard/currencies'},
-  { path: 'dashboard/currencies', component: CurrenciesComponent, pathMatch: 'full' },
-  { path: 'token', redirectTo: '/dashboard/token'},
-  { path: 'dashboard/token', component: TokenComponent, pathMatch: 'full' },
+  { path: 'platforms', redirectTo: '/dashboard/platforms'},
+  { path: 'dashboard/platforms', component: CurrenciesComponent, pathMatch: 'full' },
+  { path: 'crypto', redirectTo: '/dashboard/crypto'},
+  { path: 'dashboard/crypto', component: TokenComponent, pathMatch: 'full' },
   { path: 'exchange', redirectTo: '/dashboard/exchange'},
   // { path: 'exchange', redirectTo: '/dashboard'},
   { path: 'dashboard/exchange', component: ExchangeComponent, pathMatch: 'full' },
@@ -29,6 +30,8 @@ const routes: Routes = [
   { path: 'dashboard/portfolio', component: TokensListComponent, pathMatch: 'full' },
   { path: 'operations', redirectTo: 'dashboard/operations'},
   { path: 'dashboard/operations', component: OperationsComponent, pathMatch: 'full' },
+  { path: 'wallet', redirectTo: 'dashboard/wallet'},
+  { path: 'dashboard/wallet', component: WalletComponent, pathMatch: 'full' },
 
 ];
 

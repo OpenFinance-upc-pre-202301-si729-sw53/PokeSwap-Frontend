@@ -10,8 +10,8 @@ import { environment } from 'src/environments/environment';
 })
 export class TokenService {
 
-  // API_TOKEN = 'https://basic-crypto-rest-api-production.up.railway.app/api/pokeswap/v1/tokens';
-  API_TOKEN = 'https://pokeswap-data.onrender.com/tokens';
+  API_TOKEN = 'https://basic-crypto-rest-api-production.up.railway.app/api/pokeswap/v1/tokens';
+  //API_TOKEN = 'https://pokeswap-data.onrender.com/tokens';
 
   constructor(private http: HttpClient) { }
 
