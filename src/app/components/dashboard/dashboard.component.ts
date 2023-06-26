@@ -25,8 +25,8 @@ export class DashboardComponent {
   ];
   
   toOptions = [
-    { value: 'usd', label: 'US Dollar', img: '../assets/img/pen.png' },
-    { value: 'pen', label: 'Soles', img: '../assets/img/usd.png' },
+    { value: 'usd', label: 'US Dollar', img: '../assets/img/usd.png' },
+    { value: 'pen', label: 'Soles', img: '../assets/img/pen.png' },
   ];
   
   constructor(private router: Router, private dataconfigService: DataConfigService, private formBuilder: FormBuilder) { }
