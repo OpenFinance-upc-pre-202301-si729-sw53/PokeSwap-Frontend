@@ -28,6 +28,7 @@ export class TokenComponent {
 
   ngOnInit(): void {
     this.showCryptos();
+    
   }
 
   showCryptos() {
