@@ -68,6 +68,7 @@ export class AuthService {
   }
 
   logout(): void {
+    localStorage.removeItem('user');
     this.userData = undefined;
     this.exchange = undefined;
     this.token = this.token;
