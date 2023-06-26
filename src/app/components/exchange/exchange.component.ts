@@ -89,6 +89,10 @@ export class ExchangeComponent {
     this.nameFrom = this.dataService.getSelectedOptionFrom();
     this.nameTo = this.dataService.getSelectedOptionTo();
     console.log('nameFrom:',this.nameFrom);
+    if (this.crypto) {
+      this.quantity = this.crypto.balance * this.crypto.exchangeRate;
+      this.cryptoArr.push(this.crypto);
+    }
   }
 
   onSubmit(): void {

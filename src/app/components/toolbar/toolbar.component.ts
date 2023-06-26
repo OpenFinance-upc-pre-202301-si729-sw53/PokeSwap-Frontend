@@ -11,4 +11,10 @@ export class ToolbarComponent {
   showMenu(show: boolean): void {
     this.visible = show;
   }
+
+  logout(): void {
+    localStorage.removeItem('user');
+    localStorage.removeItem('token');
+    window.location.href = '/login';
+  }
 }

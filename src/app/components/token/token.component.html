@@ -15,13 +15,94 @@
   <p> Hint: Doge may be the best option! :3</p>
 </div>
 
-<div class="token-container" style="color: whitesmoke;">
-  <div class="token" *ngFor="let crypto of cryptos">
-    <div class="token-info">
-      <img src="https://www.freepnglogos.com/uploads/bitcoin-png/will-bitcoin-collapse-soon-moneyhighstreetm-6.png" alt="{{ crypto.symbol }} logo" width="50px" height="50px">
-      <div class="token-name">{{ crypto.symbol }}</div>
-      <div class="token-amount">{{ crypto.balance }} &nbsp; <span class="symbol"> {{ crypto.symbol }} </span> </div>
-      <button mat-button (click)="useCrypto(crypto)">Use {{crypto.symbol }}</button>
-    </div>
-  </div>
+
+<div class="form_container">
+  <form (submit)="onSubmit()" #cryptoForm="ngForm">
+
+    <mat-form-field appearance="outline">
+      <mat-label>Nombre</mat-label>
+      <input matInput type="text" placeholder="Input" name="name" required [(ngModel)]="cryptoData.name"/>
+      <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
+    </mat-form-field>
+  
+    <mat-form-field appearance="outline">
+      <mat-label>Balance</mat-label>
+      <input matInput type="number" placeholder="Input" name="balance" required [(ngModel)]="cryptoData.balance"/>
+      <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
+    </mat-form-field>
+  
+    <mat-form-field appearance="outline">
+      <mat-label>Tasa de Cambio</mat-label>
+      <input matInput type="number" placeholder="Input" name="exchangeRate" required [(ngModel)]="cryptoData.exchangeRate"/>
+      <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
+    </mat-form-field>
+  
+    <ng-container *ngIf="isEditMode; else elseTemplate">
+      <button mat-button color="primary">
+        Update
+      </button>&nbsp;
+      <button mat-button color="warn" (click)="cancelEdit()">
+        Cancel
+      </button> 
+    </ng-container>&nbsp;
+    <ng-template #elseTemplate>
+      <button mat-button color="primary">Add</button>
+    </ng-template>
+  
+  </form>
 </div>
+
+
+
+<div class="table_container">
+  <div class="mat-elevation-z8">
+    <table mat-table [dataSource]="dataSource">
+      <ng-container matColumnDef="name">
+        <th mat-header-cell *matHeaderCellDef>Nombre</th>
+        <td mat-cell *matCellDef="let row">{{ row.name }}</td>
+      </ng-container>
+  
+      <ng-container matColumnDef="balance">
+        <th mat-header-cell *matHeaderCellDef>Balance</th>
+        <td mat-cell *matCellDef="let row">{{ row.balance }}</td>
+      </ng-container>
+  
+      <ng-container matColumnDef="exchangeRate">
+        <th mat-header-cell *matHeaderCellDef>Tasa de Cambio</th>
+        <td mat-cell *matCellDef="let row">{{ row.exchangeRate }}</td>
+      </ng-container>
+  
+      <ng-container matColumnDef="action">
+        <th mat-header-cell *matHeaderCellDef>Action</th>
+        <td mat-cell *matCellDef="let row">
+          <a class="aMargin" mat-raised-button color="accent" (click)="editItem(row)"
+            ><mat-icon class="centerIcon">edit</mat-icon></a
+          >
+          <a class="aMargin" mat-raised-button color="warn" (click)="deleteItem(row.id)"
+            ><mat-icon class="centerIcon">delete</mat-icon></a
+          >
+        </td>
+      </ng-container>
+  
+      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+      <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
+    </table>
+</div>
+
+
+
+
+
+
+
+  <!--<div class="token-container" style="color: whitesmoke;">
+    <div class="token" *ngFor="let crypto of cryptos">
+      <div class="token-info">
+        <img src="https://www.freepnglogos.com/uploads/bitcoin-png/will-bitcoin-collapse-soon-moneyhighstreetm-6.png" alt="{{ crypto.symbol }} logo" width="50px" height="50px">
+        <div class="token-name">{{ crypto.symbol }}</div>
+        <div class="token-amount">{{ crypto.balance }} &nbsp; <span class="symbol"> {{ crypto.symbol }} </span> </div>
+        <button mat-button (click)="useCrypto(crypto)">Use</button>
+      </div>
+    </div>
+  </div>-->
+

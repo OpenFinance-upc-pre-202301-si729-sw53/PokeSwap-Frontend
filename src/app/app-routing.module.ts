@@ -10,6 +10,7 @@ import { TokensListComponent } from './components/tokens-list/tokens-list.compon
 import { RegisterComponent } from './components/register/register.component';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { OperationsComponent } from './components/operations/operations.component';
+import { WalletComponent } from './components/wallet/wallet.component';
 
 const routes: Routes = [
   { path: '', redirectTo: 'home', pathMatch: 'full' },
@@ -23,13 +24,18 @@ const routes: Routes = [
   { path: 'token', redirectTo: '/dashboard/token'},
   { path: 'dashboard/token', component: TokenComponent, pathMatch: 'full' },
   { path: 'exchange', redirectTo: '/dashboard'},
-  // { path: 'exchange', redirectTo: '/dashboard/exchange'},
+  { path: 'platforms', redirectTo: '/dashboard/platforms'},
+  { path: 'dashboard/platforms', component: CurrenciesComponent, pathMatch: 'full' },
+  { path: 'crypto', redirectTo: '/dashboard/crypto'},
+  { path: 'dashboard/crypto', component: TokenComponent, pathMatch: 'full' },
+  { path: 'exchange', redirectTo: '/dashboard/exchange'},
   { path: 'dashboard/exchange', component: ExchangeComponent, pathMatch: 'full' },
   { path: 'portfolio', redirectTo: 'dashboard/portfolio'},
   { path: 'dashboard/portfolio', component: TokensListComponent, pathMatch: 'full' },
   { path: 'operations', redirectTo: 'dashboard/operations'},
   { path: 'dashboard/operations', component: OperationsComponent, pathMatch: 'full' },
-
+  { path: 'wallet', redirectTo: 'dashboard/wallet'},
+  { path: 'dashboard/wallet', component: WalletComponent, pathMatch: 'full' },
 ];
 
 @NgModule({
