@@ -4,11 +4,20 @@ import { User } from '../models/users.model';
 import { Exchange } from '../models/exchange.model';
 import { Token } from '../models/token.model';
 import { Cryptos } from '../models/cryptos.model';
+import { environment } from 'src/environments/environment';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 
 @Injectable({
   providedIn: 'root'
 })
 export class AuthService {
+
+  baseUrl = `${environment.baseURL}auth`;
+  
+  httpOptions = {
+    headers: new HttpHeaders ({ 'Content-Type': 'application/json' })
+  };
+
   isLoggedIn = false;
   id: number | undefined = undefined;
   userData: User | undefined = undefined;
@@ -17,27 +26,66 @@ export class AuthService {
   token: Token | undefined = undefined;
   crypto: Cryptos | undefined = undefined;
 
-  constructor(private service: UserService) { }
+  constructor(private service: UserService, private http: HttpClient) { }
 
   async login(name: string, pass: string): Promise<boolean> {
+    const path = `${this.baseUrl}/login`;
+    console.log(path);
+    const obj: any = { email: name, password: pass };
+    console.log(obj);
+    
     try {
-      const response = await this.service.getUsers().toPromise();
-      console.log(response)
-      const matchingUser = response!.find(user => user.name === name && user.password === pass);
-      if (matchingUser) {
+      const response:any = await this.http.post(path, obj, this.httpOptions).toPromise();
+      
+      if (response) {
+        console.log(response);
         this.isLoggedIn = true;
-        this.userData = matchingUser;
-        console.log(this.userData);
-        console.log('Logged in successfully');
+        //this.id = response.id;
+        this.userData = {} as User;
+        localStorage.setItem('token', JSON.stringify(response.token));
         return true;
       }
-      console.log('Invalid credentials');
+      
       return false;
-    } catch (error) {
-      console.log('Error while logging in', error);
+    } catch (error:any) {
+      if (error.status === 400) {
+        console.log('Bad request:', error.error);
+      } else {
+        console.log('Error while logging in:', error);
+      }
       return false;
     }
   }
+  
+
+async register(obj: any): Promise<boolean> {
+  try {
+    const path = `${this.baseUrl}/register`;
+    console.log(path);
+    const response = this.http.post(path, obj, this.httpOptions);
+
+    if (response) {
+      console.log(response);
+      this.isLoggedIn = true;
+      this.userData = {
+        id: 10,
+        name: "Jhosaim Ricardo",
+        email: "jhos.ricardo14@gmail.com",
+        password: "c0fdf7b234f7d4aa",
+        phone: "932204128",
+        country: "Peru",
+        address: "Cusco - San Sebastian",
+      } as User;
+      return true;
+    }
+    return false;
+  } catch (error) {
+    console.log('Error while registering', error);
+    return false;
+  }
+}
+
+
 
   getUserData(): User {
     return this.userData!;
@@ -68,10 +116,9 @@ export class AuthService {
   }
 
   logout(): void {
-    localStorage.removeItem('user');
+    localStorage.removeItem('token');
     this.userData = undefined;
     this.exchange = undefined;
-    this.token = this.token;
     this.isLoggedIn = false;
   }
 }

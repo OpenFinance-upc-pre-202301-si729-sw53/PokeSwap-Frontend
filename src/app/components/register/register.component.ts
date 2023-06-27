@@ -2,7 +2,8 @@ import { Component, ViewChild } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { Router } from '@angular/router';
 import { User } from 'src/app/models/users.model';
-import { UserService } from 'src/app/services/users.service';
+import { AuthService } from 'src/app/services/auth.service';
+import { MatSnackBar } from '@angular/material/snack-bar';
 
 @Component({
   selector: 'app-register',
@@ -15,34 +16,31 @@ export class RegisterComponent {
   @ViewChild('userForm', { static: false })
   userForm!: NgForm;
 
-  constructor(private service: UserService, public router: Router) {
+  constructor(private service: AuthService, public router: Router, private _snackBar: MatSnackBar) {
     this.userData = {} as User;
   }
 
-  generateNewUserIdAndHash(): void {
-    let maxId = 0;
-    this.service.getUsers().subscribe((response) => {
-      for (const user of response) {
-        if (user.id > maxId) {
-          maxId = user.id;
-        }
-      }
-      this.userData.id = maxId + 1;
-      // Generate a new password hash
-      const newPassword = this.userData.password; // Replace this with the logic to generate a new password
-      this.userData.password = this.service.generatePasswordHash(newPassword);
-    });
-  }
-  
-
   async onSubmit() {
-    this.generateNewUserIdAndHash();
+    console.log(this.userData);
+    
+    const registrationSuccessful = await this.service.register({
+      email: this.userData.email,
+      password: this.userData.password,
+      name: this.userData.name,
+      phone: this.userData.phone.toString(),
+      country: this.userData.country,
+      address: this.userData.address
+    });
 
-    await this.service.addUser(this.userData).subscribe(response=>console.log(response));
-    this.service.getUsers().subscribe((response => console.log('user created!',response)))
-
-    const redirectUrl = '/login';
-    this.router.navigate([redirectUrl]);
-    this.userForm.resetForm();
+    if (registrationSuccessful) {
+      console.log('Registration successful');
+      this._snackBar.open('Registro Exitoso', '', { duration: 2000 });
+      const redirectUrl = '/login';
+      this.router.navigate([redirectUrl]);
+      this.userForm.resetForm();
+    } else {
+      this._snackBar.open('Registro Fallido', '', { duration: 2000 });
+      console.log('Registration failed');
+    }
   }
 }

@@ -13,12 +13,12 @@
 
 export interface User {
     id: number,
-    address: string,
-    country: string,
-    created_at: string,
     email: string,
-    is_active: boolean,
-    name: string,
     password: string,
+    name: string,
     phone: string
+    country: string,
+    address: string,
+    created_at: string,
+    is_active: boolean,
 }

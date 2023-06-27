@@ -1,3 +1,3 @@
 export const environment = {
-    baseURL: 'https://pokeswap-data.onrender.com/users',
+    baseURL: 'https://pokeswap-rest-api.up.railway.app/api/pokeswap/v1/',
 };

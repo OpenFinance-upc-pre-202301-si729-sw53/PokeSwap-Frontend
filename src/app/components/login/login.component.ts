@@ -4,7 +4,7 @@ import { Router } from '@angular/router';
 import { User } from 'src/app/models/users.model';
 import { AuthService } from 'src/app/services/auth.service';
 import { MatSnackBar } from '@angular/material/snack-bar';
-//John abc123
+
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
@@ -22,23 +22,15 @@ export class LoginComponent {
   }
 
   async onSubmit() {
-    console.log(this.userData)
-    /* if (await this.service.login(this.userData.name, this.userData.password)) {
-      console.log('valid data')
+    if (await this.service.login(this.userData.name, this.userData.password)) {
+      console.log('valid data');
       this._snackBar.open('Inicio de sesion exitoso', '', { duration: 2000 });
       const redirectUrl = '/dashboard/portfolio';
       this.router.navigate([redirectUrl]);
-    }
-    else{
-      console.log('invalid data')
+    } else {
+      console.log('invalid data');
       this._snackBar.open('Credenciales Invalidas', '', { duration: 2000 });
       this.userForm.resetForm();
-    }  */
-    if (this.userData.name === 'admin' && this.userData.password === 'admin') {
-      const redirectUrl = '/dashboard/portfolio';
-      this.router.navigate([redirectUrl]);
-      localStorage.setItem('user', JSON.stringify(this.userData));
     }
-    else console.log('invalid data')
   }
 }

@@ -10,7 +10,7 @@ import * as bcrypt from 'bcrypt';
 })
 export class UserService {
 
-  baseURL = environment.baseURL;
+  baseURL = `${environment.baseURL}/users`;
 
   httpOptions = {
     headers: new HttpHeaders({
@@ -34,11 +34,6 @@ export class UserService {
   }
 
   constructor(private http: HttpClient) { }
-
-  generatePasswordHash(password: string): string {
-    //add hash logic
-    return password;
-  }
 
   /** GET Users from the server */
   getUsers(): Observable<User[]> {

@@ -2,34 +2,27 @@
   <img src="../../../assets/img/logo-poke.png" alt="" width="200px" height="200px"/>
     <form (submit)="onSubmit()" #userForm="ngForm">
         <div class="tp-container">
-          <div>Welcome to POKESWAP</div><br>
+          <div><h1>Registrate en POKESWAP</h1></div><br>
+
           <mat-form-field appearance="fill">
-            <mat-label>Name</mat-label>
+            <mat-label>Email</mat-label>
             <input
               matInput
-              placeholder="Nombre"
-              id="name"
-              name="name"
+              type="email"
+              placeholder="correo@dominio.com"
+              id="email"
+              name="email"
               required
-              [(ngModel)]="userData.name"
+              [(ngModel)]="userData.email"
             />
           </mat-form-field>
+
           <mat-form-field appearance="fill">
-            <mat-label>Country</mat-label>
+            <mat-label>Clave</mat-label>
             <input
               matInput
-              placeholder="Country"
-              id="country"
-              name="country"
-              required
-              [(ngModel)]="userData.country"
-            />
-          </mat-form-field>
-          <mat-form-field appearance="fill">
-            <mat-label>Password</mat-label>
-            <input
-              matInput
-              placeholder="Password"
+              type="password"
+              placeholder="************"
               id="password"
               name="password"
               required
@@ -38,14 +31,55 @@
           </mat-form-field>
 
           <mat-form-field appearance="fill">
-            <mat-label>Email</mat-label>
+            <mat-label>Nombre</mat-label>
             <input
               matInput
-              placeholder="Email"
-              id="email"
-              name="email"
+              type="text"
+              placeholder="Nombre"
+              id="name"
+              name="name"
               required
-              [(ngModel)]="userData.email"
+              [(ngModel)]="userData.name"
+            />
+          </mat-form-field>
+
+          <mat-form-field appearance="fill">
+            <mat-label>Celular</mat-label>
+            <input
+              matInput
+              type="number"
+              placeholder="Phone"
+              id="phone"
+              name="phone"
+              required
+              [(ngModel)]="userData.phone"
+            />
+          </mat-form-field>
+
+          <mat-form-field appearance="fill">
+            <mat-label>Pais</mat-label>
+            <input
+              matInput
+              type="text"
+              placeholder="Country"
+              id="country"
+              name="country"
+              required
+              [(ngModel)]="userData.country"
+            />
+          </mat-form-field>
+          
+
+          <mat-form-field appearance="fill">
+            <mat-label>Direccion</mat-label>
+            <input
+              matInput
+              type="text"
+              placeholder="Address"
+              id="address"
+              name="address"
+              required
+              [(ngModel)]="userData.address"
             />
           </mat-form-field>
           <button
@@ -54,7 +88,7 @@
           color="primary"
           [disabled]="!userForm.form.valid"
         >
-          REGISTER
+          REGISTRARSE
         </button>
         </div>
       </form>
