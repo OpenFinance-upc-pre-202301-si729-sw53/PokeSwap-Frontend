@@ -19,12 +19,16 @@ const routes: Routes = [
   { path: 'register', component: RegisterComponent, pathMatch: 'full' },
   { path: 'users', component: UsersComponent, pathMatch: 'full' },
   { path: 'dashboard', component: DashboardComponent, pathMatch: 'full' },
+  { path: 'currencies', redirectTo: '/dashboard/currencies'},
+  { path: 'dashboard/currencies', component: CurrenciesComponent, pathMatch: 'full' },
+  { path: 'token', redirectTo: '/dashboard/token'},
+  { path: 'dashboard/token', component: TokenComponent, pathMatch: 'full' },
+  { path: 'exchange', redirectTo: '/dashboard'},
   { path: 'platforms', redirectTo: '/dashboard/platforms'},
   { path: 'dashboard/platforms', component: CurrenciesComponent, pathMatch: 'full' },
   { path: 'crypto', redirectTo: '/dashboard/crypto'},
   { path: 'dashboard/crypto', component: TokenComponent, pathMatch: 'full' },
   { path: 'exchange', redirectTo: '/dashboard/exchange'},
-  // { path: 'exchange', redirectTo: '/dashboard'},
   { path: 'dashboard/exchange', component: ExchangeComponent, pathMatch: 'full' },
   { path: 'portfolio', redirectTo: 'dashboard/portfolio'},
   { path: 'dashboard/portfolio', component: TokensListComponent, pathMatch: 'full' },
@@ -32,7 +36,6 @@ const routes: Routes = [
   { path: 'dashboard/operations', component: OperationsComponent, pathMatch: 'full' },
   { path: 'wallet', redirectTo: 'dashboard/wallet'},
   { path: 'dashboard/wallet', component: WalletComponent, pathMatch: 'full' },
-
 ];
 
 @NgModule({

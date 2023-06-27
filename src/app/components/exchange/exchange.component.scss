@@ -1,3 +1,10 @@
+.container-add {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 9999;
+}
+
 .last-op {
     width: 300px;
     margin: auto;
@@ -82,4 +89,5 @@ mat-card {
 
 .coin-image{
     padding-right: 25px;
+    padding-left: 25px;
 }

@@ -6,6 +6,7 @@ import { Token } from '../models/token.model';
 import { Cryptos } from '../models/cryptos.model';
 import { environment } from 'src/environments/environment';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { Platforms } from '../models/platforms.model';
 
 @Injectable({
   providedIn: 'root'
@@ -23,6 +24,7 @@ export class AuthService {
   userData: User | undefined = undefined;
   redirectUrl: string | null = null;
   exchange: Exchange | undefined = undefined;
+  platform: Platforms | undefined = undefined;
   token: Token | undefined = undefined;
   crypto: Cryptos | undefined = undefined;
 
@@ -97,6 +99,10 @@ async register(obj: any): Promise<boolean> {
 
   getExchange(): Exchange {
     return this.exchange!;
+  }
+
+  getPlatform(): Platforms {
+    return this.platform!;
   }
 
   setToken(obj: Token): void {

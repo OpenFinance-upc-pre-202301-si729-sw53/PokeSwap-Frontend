@@ -8,7 +8,7 @@ import { Cryptos } from 'src/app/models/cryptos.model';
 import { CryptosService } from 'src/app/services/cryptos.service';
 import { NgForm } from '@angular/forms';
 import { Location } from '@angular/common';
-import * as _ from 'lodash'
+import * as _ from 'lodash';
 
 
 @Component({
@@ -40,6 +40,7 @@ export class TokenComponent {
   }
 
   ngOnInit(): void {
+    
     this.loadCryptos();
   }
 
@@ -105,7 +106,7 @@ export class TokenComponent {
         id: 1
       }
     };
-    this.cryptoData.user=userObj.user;
+    this.cryptoData.user = userObj.user;
 
     console.log('cryptoData:', this.cryptoData);
 
